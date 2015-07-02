@@ -142,6 +142,14 @@ div.text_cell_render {
     padding: 0.5em 0em;
 }
 
+div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
 </style>
 
@@ -166,6 +174,24 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>
+
+
 
     <meta name="author" content="John Vial" />
     <meta name="keywords" content="blog" />
@@ -187,6 +213,7 @@ init_mathjax();
 
         <link href="http://notes.johnvial.info/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="John's Notes ATOM Feed"/>
+
 
 </head>
 <body>
@@ -239,6 +266,32 @@ John's Notes            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="http://notes.johnvial.info/angular-js-and-d3js.html">Angular JS and D3.js</a></h2>
+                <div class="summary"><p><img alt="emu" src="http://notes.johnvial.info/images/emu.jpeg" /></p>
+<h1>Angular JS</h1>
+<p>So I've just read through the <a href="https://docs.angularjs.org/tutorial/">angular tutorial</a>
+. I found it pretty good. Angular shares alot incommon with DJango and
+Jinja templates, in that the curly braces syntax <code>{{ }}</code> is used to contain code that
+is executed, and that they try to maintain a model view controller. </p>
+<p>One ...</p>
+                    <a class="btn btn-default btn-xs" href="http://notes.johnvial.info/angular-js-and-d3js.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://notes.johnvial.info/how-to-fascinate-a-review.html">How to Fascinate - A review</a></h2>
+                <div class="summary"><p><img alt="sunsetting with ship in foreground" src="http://notes.johnvial.info/images/ship_set.png" /></p>
+<p>I was recently asked to write a personal biography for a new startup venture. Personally
+I hate doing this kind of thing. Anyway, my collegue suggested
+that I look at the talks and books by Sally Hogshead. I eventually managed to get
+a copy of the following:</p>
+<blockquote>
+<p>Hogshead, S. (2010 ...</p></blockquote>
+                    <a class="btn btn-default btn-xs" href="http://notes.johnvial.info/how-to-fascinate-a-review.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="http://notes.johnvial.info/exploration-of-bokeh.html">Exploration of Bokeh</a></h2>
                 <div class="summary"><p><img alt="lizard" src="http://notes.johnvial.info/images/lizard.jpg" /></p>
 <p>I've watched the growth of the <a href="http://bokeh.pydata.org/en/latest/">bokeh</a> library over the last
@@ -266,47 +319,15 @@ this time you need to start visualising the data ...</p>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://notes.johnvial.info/notes-on-using-r-and-python.html">Notes on using R and Python</a></h2>
-                <div class="summary"><p><img alt="red metal object" src="http://notes.johnvial.info/images/metal_object.png" /></p>
-<h2>Differences between python and R syntax</h2>
-<p>Differences (comparing to python, from my reading of the <a href="http://cran.r-project.org/doc/manuals/r-release/R-intro.html">R Docs</a>).</p>
-<ul>
-<li>
-<p>the <code>.</code> is not a special character in R, this will become confusing as <code>data.frame</code> is a class name, not rather the class <code>frame</code> from the module <code>data</code>.</p>
-</li>
-<li>
-<p>The <code>&lt;-</code> is assignment.</p>
-</li>
-<li>
-<p>Construct a ...</p></li></ul>
-                    <a class="btn btn-default btn-xs" href="http://notes.johnvial.info/notes-on-using-r-and-python.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://notes.johnvial.info/building-this-website.html">Building this website</a></h2>
-                <div class="summary"><p><img alt="HV electric insulator's as a Lamp" src="http://notes.johnvial.info/images/power-light.png" /></p>
-<p>Building this website was quite straight forward. I'm using the python static
-site generator <a href="http://getplican.com">Pelican</a>. This was very easy to setup
-using the pelican <a href="http://pelican.readthedocs.org/">quick start guide</a>. I then
-applied the excellent pelican theme
-<a href="https://github.com/DandyDev/pelican-bootstrap3">pelican-bootstrap3</a>. With the addition
-of the <a href="https://https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags">liquid-tags</a>
-I am able to easily render IPython notebooks.</p>
-                    <a class="btn btn-default btn-xs" href="http://notes.johnvial.info/building-this-website.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://notes.johnvial.info/machine-learning-summer-school-intro-to-python.html">Machine Learning Summer School - Intro to Python</a></h2>
-                <div class="summary"><p><img alt="Sydney" src="http://notes.johnvial.info/images/sydney.jpg" /></p>
-<p>I was a Lab tutor at the Machine Learning Summer School in Sydney this year. 
-<a href="http://legacy.nicta.com.au/research/machine_learning/mlss2015">MLSS Website</a>. For the labs we
-wrote a series of IPython notebooks. They can be found at <a href="https://github.com/NICTA/MLSS">MLSS GitHub</a>. 
-I co-authored the introduction to python notebook with <a href="https://bitsofpy.blogspot.com.au">Brian Thorne</a>, 
-its answers are reproduced below. </p>
-<h1>Intro ...</h1>
-                    <a class="btn btn-default btn-xs" href="http://notes.johnvial.info/machine-learning-summer-school-intro-to-python.html">more ...</a>
+                <h2><a href="http://notes.johnvial.info/simple-demand-model-with-holoviews.html">Simple Demand Model with HoloViews</a></h2>
+                <div class="summary"><p><img alt="peeling paint" src="http://notes.johnvial.info/images/peeling_paint.jpg" /></p>
+<p>I wanted to explore a simple demand model, the package 
+<a href="http://ioam.github.io/holoviews/">HoloViews</a> can be used to enable a quick visualisation.</p>
+<p>Unfortunately the HoloViews module doesn't seem to play nicely with my notebook
+generation software. As a stopgap you can find the rendered notebook 
+<a href="http://notes.johnvial.info/notebooks/economic_model.html">here</a>,
+be warned that you will leave ...</p>
+                    <a class="btn btn-default btn-xs" href="http://notes.johnvial.info/simple-demand-model-with-holoviews.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -331,6 +352,7 @@ its answers are reproduced below. </p>
                 <li class="list-group-item"><a href="http://github.com/johnny555"><i class="fa fa-github-square fa-lg"></i> github</a></li>
                 <li class="list-group-item"><a href="http://au.linkedin.com/in/johnvial"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
                 <li class="list-group-item"><a href="http://twitter.com/JohnVial"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
+                <li class="list-group-item"><a href="http://scholar.google.com.au/citations?user=Tn8_5HQAAAAJ&hl=en"><i class="fa fa-graduation-cap fa-lg"></i> scholar</a></li>
               </ul>
             </li>
 
@@ -338,9 +360,14 @@ its answers are reproduced below. </p>
 
             <li class="list-group-item"><a href="http://notes.johnvial.info/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
-                    <li class="list-group-item tag-0">
+                    <li class="list-group-item tag-1">
                         <a href="http://notes.johnvial.info/tag/python.html">
                             python
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="http://notes.johnvial.info/tag/webdev.html">
+                            webdev
                         </a>
                     </li>
                     <li class="list-group-item tag-2">
@@ -349,18 +376,8 @@ its answers are reproduced below. </p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://notes.johnvial.info/tag/plotting.html">
-                            plotting
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
                         <a href="http://notes.johnvial.info/tag/r.html">
                             R
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://notes.johnvial.info/tag/webdev.html">
-                            webdev
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -369,8 +386,23 @@ its answers are reproduced below. </p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://notes.johnvial.info/tag/machine-learning.html">
-                            Machine Learning
+                        <a href="http://notes.johnvial.info/tag/housing.html">
+                            housing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://notes.johnvial.info/tag/django.html">
+                            django
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://notes.johnvial.info/tag/economics.html">
+                            Economics
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://notes.johnvial.info/tag/startup.html">
+                            startup
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -378,23 +410,33 @@ its answers are reproduced below. </p>
                             bokeh
                         </a>
                     </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://notes.johnvial.info/tag/javascript.html">
+                            javascript
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://notes.johnvial.info/tag/plotting.html">
+                            plotting
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://notes.johnvial.info/tag/machine-learning.html">
+                            Machine Learning
+                        </a>
+                    </li>
                 </ul>
             </li>
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
       <ul class="list-group" id="links">
         <li class="list-group-item">
-            <a href="http://getpelican.com/" target="_blank">
-                Pelican
+            <a href="http://notes.livingthing.org/" target="_blank">
+                LivingThing
             </a>
         </li>
         <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
+            <a href="https://bitsofpy.blogspot.com.au" target="_blank">
+                BitsOfPy
             </a>
         </li>
       </ul>
