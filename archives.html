@@ -1,68 +1,262 @@
 <!DOCTYPE html>
+<!--
+    (The MIT License)
+
+    Copyright (c) 2016 Kura
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the 'Software'), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>John's Notes</title>
-        <link rel="stylesheet" href="http://notes.johnvial.info/theme/css/main.css" />
-        <link href="http://notes.johnvial.info/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="John's Notes Atom Feed" />
-
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+<head id="head">
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="alternate" href="http://notes.johnvial.info" hreflang="en" />
+<link rel="dns-prefetch" href="http://notes.johnvial.info">
+<link rel="dns-prefetch" href="//code.getmdl.io">
+    <link rel="shortcut icon" href="http://notes.johnvial.info/favicon.ico">
+    <title>Archives</title>
 </head>
-
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://notes.johnvial.info/">John's Notes </a></h1>
-                <nav><ul>
-                    <li><a href="http://notes.johnvial.info/category/misc.html">misc</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-<h1>Archives for John's Notes</h1>
-
-<dl>
-    <dt>Wed 03 May 2017</dt>
-    <dd><a href="http://notes.johnvial.info/docker_cheat_sheet.html">Docker Cheat Sheet</a></dd>
-    <dt>Tue 02 May 2017</dt>
-    <dd><a href="http://notes.johnvial.info/five_digital_trends.html">Review of 5 Digital Trends at This Years New fronts</a></dd>
-    <dt>Tue 02 May 2017</dt>
-    <dd><a href="http://notes.johnvial.info/newfronts_conference.html">NewFronts conference</a></dd>
-    <dt>Mon 01 May 2017</dt>
-    <dd><a href="http://notes.johnvial.info/digital_advertising_glossary.html">Digital Advertising Glossary</a></dd>
-    <dt>Wed 22 April 2015</dt>
-    <dd><a href="http://notes.johnvial.info/haskell.html">Doing Haskel Tutorial</a></dd>
-</dl>
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://upright.media/">Upright Media</a></li>
-                            <li><a href="http://fast.ai/">Fast.ai</a></li>
-                            <li><a href="http://pmlg.org">Perth ML Group</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://notes.johnvial.info/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="http://github.com/johnny555">github</a></li>
-                            <li><a href="http://au.linkedin.com/in/johnvial">linkedin</a></li>
-                            <li><a href="http://twitter.com/JohnVial">twitter</a></li>
-                            <li><a href="http://scholar.google.com.au/citations?user=Tn8_5HQAAAAJ&hl=en">scholar</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
+<body>
+    <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50">
+        <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800"
+                itemscope itemtype="http://schema.org/WPHeader">
+            <div class="mdl-layout__header-row" id="top">
+                <div aria-expanded="false" role="button" tabindex="0"
+                     class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only">
+                    <i class="material-icons">&#xE5D2;</i>
+                </div>
+                <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
+                    <h2>
+                        <a href="http://notes.johnvial.info" rel="bookmark"
+                           title="John's Notes">
+                            John's Notes
+                        </a>
+                    </h2>
+                </span>
+                <div class="mdl-layout-spacer" role="presentation"></div>
+                <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only"
+                     itemscope itemtype="http://schema.org/SiteNavigationElement"
+                     aria-label="Header navigation">
+                </nav>
+            </div>
+        </header>
+        <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white"
+             aria-hidden="true">
+            <span class="mdl-layout-title">
+                <h2 class="eevee-mobile-logo mdl-color-text--accent">
+                    John's Notes
+                </h2>
+            </span>
+            <div class="mdl-navigation mdl-color--white">
+                <nav class="eevee-nav mdl-navigation" itemscope
+                     itemtype="http://schema.org/SiteNavigationElement"
+                     aria-label="Header navigation">
+                    <a class="mdl-color-text--accent mdl-navigation__link"
+                       href="http://notes.johnvial.info" itemprop="url" rel="bookmark">
+                        Home
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="eevee-ribbon mdl-color--primary-dark" role="presentation">
+        </div>
+        <main class="eevee-main mdl-layout__content">
+            <div class="eevee-container mdl-grid">
+                <div role="presentation"
+                     class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                </div>
+                <div class="eevee-content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"
+                     aria-label="Main content">
+    <article itemscope itemtype="http://schema.org/WebPage">
+        <div class="eevee-page-spacer" role="presentation"></div>
+        <div class="eevee-page" itemprop="mainContentOfPage">
+    <h2>
+            2017
+    </h2>
+    <h3>
+            May
+    </h3>
+    <section class="eevee-toc">
+        <nav class="eevee-toc-ribbon">
+            <ul>
+                    <li>
+                        <a href="http://notes.johnvial.info/docker_cheat_sheet.html" itemprop="url" rel="bookmark"
+                           title="Permalink to 'Docker Cheat Sheet'">
+                            Docker Cheat Sheet
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://notes.johnvial.info/five_digital_trends.html" itemprop="url" rel="bookmark"
+                           title="Permalink to 'Review of 5 Digital Trends at This Years New fronts'">
+                            Review of 5 Digital Trends at This Years New fronts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://notes.johnvial.info/digital_advertising_glossary.html" itemprop="url" rel="bookmark"
+                           title="Permalink to 'Digital Advertising Glossary'">
+                            Digital Advertising Glossary
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://notes.johnvial.info/newfronts_conference.html" itemprop="url" rel="bookmark"
+                           title="Permalink to 'NewFronts conference'">
+                            NewFronts conference
+                        </a>
+                    </li>
+            </ul>
+        </nav>
+    </section>
+    <h2>
+            2015
+    </h2>
+    <h3>
+            April
+    </h3>
+    <section class="eevee-toc">
+        <nav class="eevee-toc-ribbon">
+            <ul>
+                    <li>
+                        <a href="http://notes.johnvial.info/haskell.html" itemprop="url" rel="bookmark"
+                           title="Permalink to 'Doing Haskel Tutorial'">
+                            Doing Haskel Tutorial
+                        </a>
+                    </li>
+            </ul>
+        </nav>
+    </section>
+        </div>
+    </article>
+                </div>
+            </div>
+        </main>
+            <div class="eevee-pagination__container eevee-container mdl-grid">
+                <div role="presentation"
+                     class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+<nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Pagination">
+    <div class="eevee-spacer"></div>
+</nav>                </div>
+            </div>
+        <footer class="mdl-mega-footer" itemscope
+                itemtype="http://schema.org/SiteNavigationElement">
+            <div class="mdl-mega-footer--top-section">
+                <div class="mdl-mega-footer--drop-down-section">
+                    <ul class="mdl-mega-footer--link-list">
+                        <li>
+                            <a href="#top" itemprop="url"
+                               title="Back to the top of the page">
+                                Back to the top of the page
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+<div class="mdl-mega-footer--middle-section" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Footer navigation">
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Categories</h1>
+        <ul class="mdl-mega-footer--link-list">
+                <li>
+                    <a href="http://notes.johnvial.info/category/misc.html" itemprop="url"
+                       rel="bookmark">
+                        misc
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Social</h1>
+        <ul class="mdl-mega-footer--link-list">
+                <li>
+                    <a href="http://github.com/johnny555" itemprop="url" rel="bookmark">
+                        github
+                    </a>
+                </li>
+                <li>
+                    <a href="http://au.linkedin.com/in/johnvial" itemprop="url" rel="bookmark">
+                        linkedin
+                    </a>
+                </li>
+                <li>
+                    <a href="http://twitter.com/JohnVial" itemprop="url" rel="bookmark">
+                        twitter
+                    </a>
+                </li>
+                <li>
+                    <a href="http://scholar.google.com.au/citations?user=Tn8_5HQAAAAJ&hl=en" itemprop="url" rel="bookmark">
+                        scholar
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Links</h1>
+        <ul class="mdl-mega-footer--link-list">
+                <li>
+                    <a href="http://upright.media/" itemprop="url" rel="bookmark">
+                        Upright Media
+                    </a>
+                </li>
+                <li>
+                    <a href="http://fast.ai/" itemprop="url" rel="bookmark">
+                        Fast.ai
+                    </a>
+                </li>
+                <li>
+                    <a href="http://pmlg.org" itemprop="url" rel="bookmark">
+                        Perth ML Group
+                    </a>
+                </li>
+        </ul>
+    </div>
+</div>            <div class="mdl-mega-footer--bottom-section">
+                <div class="mdl-logo">
+                    <a href="http://notes.johnvial.info" rel="bookmark" itemprop="url"
+                       title="John's Notes">
+                        John's Notes
+                    </a>
+                </div>
+                    <ul class="eevee-footer mdl-mega-footer--link-list">
+                            <li>Powered by love &amp; rainbow sparkles.</li>
+                            <li><a href="https://kura.io/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.io/" title="kura.io">kura.io</a></li>
+                    </ul>
+            </div>
+        </footer>
+    </div>
+    <link rel="stylesheet"
+          href="//code.getmdl.io/1.1.3/material.blue-pink.min.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/material-icons.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/pygments.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/eevee.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/custom.css">
+        <script async src="http://notes.johnvial.info/theme/js/material.js">
+        </script>
 </body>
 </html>

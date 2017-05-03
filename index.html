@@ -1,192 +1,476 @@
 <!DOCTYPE html>
+<!--
+    (The MIT License)
+
+    Copyright (c) 2016 Kura
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the 'Software'), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>John's Notes</title>
-        <link rel="stylesheet" href="http://notes.johnvial.info/theme/css/main.css" />
-        <link href="http://notes.johnvial.info/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="John's Notes Atom Feed" />
-
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+<head id="head">
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="alternate" href="http://notes.johnvial.info" hreflang="en" />
+<link rel="dns-prefetch" href="http://notes.johnvial.info">
+<link rel="dns-prefetch" href="//code.getmdl.io">
+    <link rel="shortcut icon" href="http://notes.johnvial.info/favicon.ico">
+    <title>John's Notes</title>
 </head>
-
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://notes.johnvial.info/">John's Notes </a></h1>
-                <nav><ul>
-                    <li><a href="http://notes.johnvial.info/category/misc.html">misc</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://notes.johnvial.info/docker_cheat_sheet.html">Docker Cheat Sheet</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2017-05-03T13:00:00+08:00">
-                Published: Wed 03 May 2017
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://notes.johnvial.info/author/john-vial.html">John Vial</a>
-        </address>
-<p>In <a href="http://notes.johnvial.info/category/misc.html">misc</a>.</p>
-<p>tags: <a href="http://notes.johnvial.info/tag/programming.html">programming</a> <a href="http://notes.johnvial.info/tag/docker.html">docker</a> </p>
-</footer><!-- /.post-info --><p><a href="http://docker.com">Docker</a> is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.</p>
-<p>This post is just a list of useful commands and things to know about docker.</p>
-<ul>
-<li><code>RUN &lt;command&gt;</code> In a dockerfile, the RUN directive executes the <code>&lt;command&gt;</code> and then creates a new layer in the dockerfile.</li>
-<li><code>CMD [...]</code> A CMD, this command is run whenever the docker image is run without any other commands. See <a href="http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/">RUN-vs-CMD</a></li>
-<li><code>docker images</code> will list the images currently available in Docker.</li>
-<li><code>docker ps</code> will list the images currently running.</li>
-<li><code>docker exec -it &lt;instance_name&gt; bash</code> will start a bash shell inside of the docker instance name <code>&lt;instance_name&gt;</code>. Unfortunately, this is different to the image name.</li>
-<li><code>docker-compose up</code> Assumes the presence of a docker-compose.yml file. Will run the docker container configuration described in docker-compose.yml</li>
-<li><code>docker-compose -f &lt;filename&gt; up</code> run the filename <code>&lt;filename&gt;</code> instead of default.</li>
-<li><code>docker-compose up --build</code> Rebulids everything described in the docker-compes.yml file.</li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://notes.johnvial.info/five_digital_trends.html" rel="bookmark"
-                           title="Permalink to Review of 5 Digital Trends at This Years New fronts">Review of 5 Digital Trends at This Years New fronts</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-05-02T16:00:00+08:00">
-                Published: Tue 02 May 2017
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://notes.johnvial.info/author/john-vial.html">John Vial</a>
-        </address>
-<p>In <a href="http://notes.johnvial.info/category/misc.html">misc</a>.</p>
-<p>tags: <a href="http://notes.johnvial.info/tag/adtech.html">adtech</a> </p>
-</footer><!-- /.post-info -->                <p>Here is another interesting AdTech article, again related to the New
+<body>
+    <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50">
+        <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800"
+                itemscope itemtype="http://schema.org/WPHeader">
+            <div class="mdl-layout__header-row" id="top">
+                <div aria-expanded="false" role="button" tabindex="0"
+                     class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only">
+                    <i class="material-icons">&#xE5D2;</i>
+                </div>
+                <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
+                    <h2>
+                        <a href="http://notes.johnvial.info" rel="bookmark"
+                           title="John's Notes">
+                            John's Notes
+                        </a>
+                    </h2>
+                </span>
+                <div class="mdl-layout-spacer" role="presentation"></div>
+                <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only"
+                     itemscope itemtype="http://schema.org/SiteNavigationElement"
+                     aria-label="Header navigation">
+                </nav>
+            </div>
+        </header>
+        <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white"
+             aria-hidden="true">
+            <span class="mdl-layout-title">
+                <h2 class="eevee-mobile-logo mdl-color-text--accent">
+                    John's Notes
+                </h2>
+            </span>
+            <div class="mdl-navigation mdl-color--white">
+                <nav class="eevee-nav mdl-navigation" itemscope
+                     itemtype="http://schema.org/SiteNavigationElement"
+                     aria-label="Header navigation">
+                    <a class="mdl-color-text--accent mdl-navigation__link"
+                       href="http://notes.johnvial.info" itemprop="url" rel="bookmark">
+                        Home
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="eevee-ribbon mdl-color--primary-dark" role="presentation">
+        </div>
+        <main class="eevee-main mdl-layout__content">
+            <div class="eevee-container mdl-grid">
+                <div role="presentation"
+                     class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                </div>
+                <div class="eevee-content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"
+                     aria-label="Main content">
+        <article class="eevee-padding" itemscope
+                 itemtype="http://schema.org/BlogPosting">
+<meta itemprop="accessibilityControl" content="fullKeyboardControl">
+<meta itemprop="accessibilityControl" content="fullMouseControl">
+<meta itemprop="accessibilityControl" content="bookmarks">
+<meta itemprop="accessibilityControl" content="captions">
+<meta itemprop="accessibilityControl" content="alternativeText">
+<meta itemprop="accessibilityControl" content="index">
+<meta itemprop="accessibilityControl" content="readingOrder">
+<meta itemprop="accessibilityControl" content="structuralNavigation">
+<meta itemprop="accessibilityControl" content="tableOfContents">
+<meta itemprop="accessibilityHazard" content="noFlashingHazard">
+<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard">
+<meta itemprop="accessibilityHazard" content="noSoundHazard">
+<meta itemprop="accessibilityAPI" content="ARIA">
+    <div itemprop="author" itemscope
+         itemtype="https://schema.org/Person" role="presentation">
+        <a href="http://notes.johnvial.info/author/john-vial.html" class="hidden"
+           itemprop="url" role="presentation">
+            <span class="hidden" itemprop="name" role="presentation">
+                John Vial
+            </span>
+        </a>
+    </div>
+        <meta itemprop="keywords"
+              content="programming,docker">
+        <meta itemprop="keywords" content="misc">
+            <div class="eevee-meta mdl-color-text--grey-500">
+                <time datetime="2017-05-03T13:00:00+08:00"
+                      itemprop="datePublished">
+                    Wed 03 May 2017
+                </time>
+            </div>
+            <h2 itemprop="name" class="article-title">
+                <a href="http://notes.johnvial.info/docker_cheat_sheet.html" rel="bookmark"
+                   title="Permalink to 'Docker Cheat Sheet'"
+                   itemprop="url">
+                Docker Cheat Sheet
+                </a>
+            </h2>
+            <section itemprop="articleBody" class="summary-content">
+                <p><a href="http://docker.com">Docker</a> is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.</p>
+<p>This post …</p>
+            </section>
+                <div class="eevee-divider mdl-color--accent" role="presentation">
+                </div>
+                <div class="eevee-divider-to-top">
+                    <a href="#top" title="Back to the top of the page"
+                       itemprop="url">
+                        Back to the top of the page
+                    </a>
+                </div>
+        </article>
+        <article class="eevee-padding" itemscope
+                 itemtype="http://schema.org/BlogPosting">
+<meta itemprop="accessibilityControl" content="fullKeyboardControl">
+<meta itemprop="accessibilityControl" content="fullMouseControl">
+<meta itemprop="accessibilityControl" content="bookmarks">
+<meta itemprop="accessibilityControl" content="captions">
+<meta itemprop="accessibilityControl" content="alternativeText">
+<meta itemprop="accessibilityControl" content="index">
+<meta itemprop="accessibilityControl" content="readingOrder">
+<meta itemprop="accessibilityControl" content="structuralNavigation">
+<meta itemprop="accessibilityControl" content="tableOfContents">
+<meta itemprop="accessibilityHazard" content="noFlashingHazard">
+<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard">
+<meta itemprop="accessibilityHazard" content="noSoundHazard">
+<meta itemprop="accessibilityAPI" content="ARIA">
+    <div itemprop="author" itemscope
+         itemtype="https://schema.org/Person" role="presentation">
+        <a href="http://notes.johnvial.info/author/john-vial.html" class="hidden"
+           itemprop="url" role="presentation">
+            <span class="hidden" itemprop="name" role="presentation">
+                John Vial
+            </span>
+        </a>
+    </div>
+        <meta itemprop="keywords"
+              content="adtech">
+        <meta itemprop="keywords" content="misc">
+            <div class="eevee-meta mdl-color-text--grey-500">
+                <time datetime="2017-05-02T16:00:00+08:00"
+                      itemprop="datePublished">
+                    Tue 02 May 2017
+                </time>
+            </div>
+            <h2 itemprop="name" class="article-title">
+                <a href="http://notes.johnvial.info/five_digital_trends.html" rel="bookmark"
+                   title="Permalink to 'Review of 5 Digital Trends at This Years New fronts'"
+                   itemprop="url">
+                Review of 5 Digital Trends at This Years New fronts
+                </a>
+            </h2>
+            <section itemprop="articleBody" class="summary-content">
+                <p>Here is another interesting AdTech article, again related to the New
 Fronts conference that appears to be on
 soon. <a href="http://www.adweek.com/tv-video/5-digital-video-trends-to-watch-for-at-this-years-newfronts/">5 Digital Video Trends to Watch for at this years NewFronts</a>. My
 previous article is here <a href="http://notes.johnvial.info/newfronts_conference.html">New Fronts</a>.</p>
 <p>The article begins with a big claim:</p>
 <blockquote>
 <p>The growth of the market for …</p></blockquote>
-                <a class="readmore" href="http://notes.johnvial.info/five_digital_trends.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://notes.johnvial.info/newfronts_conference.html" rel="bookmark"
-                           title="Permalink to NewFronts conference">NewFronts conference</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-05-02T00:00:00+08:00">
-                Published: Tue 02 May 2017
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://notes.johnvial.info/author/john-vial.html">John Vial</a>
-        </address>
-<p>In <a href="http://notes.johnvial.info/category/misc.html">misc</a>.</p>
-<p>tags: <a href="http://notes.johnvial.info/tag/adtech.html">adtech</a> </p>
-</footer><!-- /.post-info -->                <p>Reflections on the article <a href="http://www.adweek.com/tv-video/as-the-newfronts-begin-6-top-execs-discuss-videos-perils-and-promises/">As the Newronts Begin, 6 Top Execs Discuss Video's Perils and Promises</a>.</p>
+            </section>
+                <div class="eevee-divider mdl-color--accent" role="presentation">
+                </div>
+                <div class="eevee-divider-to-top">
+                    <a href="#top" title="Back to the top of the page"
+                       itemprop="url">
+                        Back to the top of the page
+                    </a>
+                </div>
+        </article>
+        <article class="eevee-padding" itemscope
+                 itemtype="http://schema.org/BlogPosting">
+<meta itemprop="accessibilityControl" content="fullKeyboardControl">
+<meta itemprop="accessibilityControl" content="fullMouseControl">
+<meta itemprop="accessibilityControl" content="bookmarks">
+<meta itemprop="accessibilityControl" content="captions">
+<meta itemprop="accessibilityControl" content="alternativeText">
+<meta itemprop="accessibilityControl" content="index">
+<meta itemprop="accessibilityControl" content="readingOrder">
+<meta itemprop="accessibilityControl" content="structuralNavigation">
+<meta itemprop="accessibilityControl" content="tableOfContents">
+<meta itemprop="accessibilityHazard" content="noFlashingHazard">
+<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard">
+<meta itemprop="accessibilityHazard" content="noSoundHazard">
+<meta itemprop="accessibilityAPI" content="ARIA">
+    <div itemprop="author" itemscope
+         itemtype="https://schema.org/Person" role="presentation">
+        <a href="http://notes.johnvial.info/author/john-vial.html" class="hidden"
+           itemprop="url" role="presentation">
+            <span class="hidden" itemprop="name" role="presentation">
+                John Vial
+            </span>
+        </a>
+    </div>
+        <meta itemprop="keywords"
+              content="adtech">
+        <meta itemprop="keywords" content="misc">
+            <div class="eevee-meta mdl-color-text--grey-500">
+                <time datetime="2017-05-02T00:00:00+08:00"
+                      itemprop="datePublished">
+                    Tue 02 May 2017
+                </time>
+            </div>
+            <h2 itemprop="name" class="article-title">
+                <a href="http://notes.johnvial.info/newfronts_conference.html" rel="bookmark"
+                   title="Permalink to 'NewFronts conference'"
+                   itemprop="url">
+                NewFronts conference
+                </a>
+            </h2>
+            <section itemprop="articleBody" class="summary-content">
+                <p>Reflections on the article <a href="http://www.adweek.com/tv-video/as-the-newfronts-begin-6-top-execs-discuss-videos-perils-and-promises/">As the Newronts Begin, 6 Top Execs Discuss Video's Perils and Promises</a>.</p>
 <p>My co-founder Eric suggested that I should look at this article.</p>
 <blockquote>
 <p>The digital video industry is just getting started, it's going to take atleast 10 years to play out and we don't know what's …</p></blockquote>
-                <a class="readmore" href="http://notes.johnvial.info/newfronts_conference.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://notes.johnvial.info/digital_advertising_glossary.html" rel="bookmark"
-                           title="Permalink to Digital Advertising Glossary">Digital Advertising Glossary</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-05-01T00:00:00+08:00">
-                Published: Mon 01 May 2017
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://notes.johnvial.info/author/john-vial.html">John Vial</a>
-        </address>
-<p>In <a href="http://notes.johnvial.info/category/misc.html">misc</a>.</p>
-<p>tags: <a href="http://notes.johnvial.info/tag/adtech.html">adtech</a> </p>
-</footer><!-- /.post-info -->                <p>I'm trying to understand the advertising world, the following
+            </section>
+                <div class="eevee-divider mdl-color--accent" role="presentation">
+                </div>
+                <div class="eevee-divider-to-top">
+                    <a href="#top" title="Back to the top of the page"
+                       itemprop="url">
+                        Back to the top of the page
+                    </a>
+                </div>
+        </article>
+        <article class="eevee-padding" itemscope
+                 itemtype="http://schema.org/BlogPosting">
+<meta itemprop="accessibilityControl" content="fullKeyboardControl">
+<meta itemprop="accessibilityControl" content="fullMouseControl">
+<meta itemprop="accessibilityControl" content="bookmarks">
+<meta itemprop="accessibilityControl" content="captions">
+<meta itemprop="accessibilityControl" content="alternativeText">
+<meta itemprop="accessibilityControl" content="index">
+<meta itemprop="accessibilityControl" content="readingOrder">
+<meta itemprop="accessibilityControl" content="structuralNavigation">
+<meta itemprop="accessibilityControl" content="tableOfContents">
+<meta itemprop="accessibilityHazard" content="noFlashingHazard">
+<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard">
+<meta itemprop="accessibilityHazard" content="noSoundHazard">
+<meta itemprop="accessibilityAPI" content="ARIA">
+    <div itemprop="author" itemscope
+         itemtype="https://schema.org/Person" role="presentation">
+        <a href="http://notes.johnvial.info/author/john-vial.html" class="hidden"
+           itemprop="url" role="presentation">
+            <span class="hidden" itemprop="name" role="presentation">
+                John Vial
+            </span>
+        </a>
+    </div>
+        <meta itemprop="keywords"
+              content="adtech">
+        <meta itemprop="keywords" content="misc">
+            <div class="eevee-meta mdl-color-text--grey-500">
+                <time datetime="2017-05-01T00:00:00+08:00"
+                      itemprop="datePublished">
+                    Mon 01 May 2017
+                </time>
+            </div>
+            <h2 itemprop="name" class="article-title">
+                <a href="http://notes.johnvial.info/digital_advertising_glossary.html" rel="bookmark"
+                   title="Permalink to 'Digital Advertising Glossary'"
+                   itemprop="url">
+                Digital Advertising Glossary
+                </a>
+            </h2>
+            <section itemprop="articleBody" class="summary-content">
+                <p>I'm trying to understand the advertising world, the following
 link helped me. <a href="http://studybreakmedia.com/glossary">Advertising Glossary</a>.</p>
 <p>I've typed out many of the terms to help me remember them. Perhaps it will help you as well:</p>
 <ul>
 <li><em>Ad Tag</em> Javascript that coordinates serving of ads to the user.</li>
 <li><em>Ad Network</em> and <em>Auction Price Floor …</em></li></ul>
-                <a class="readmore" href="http://notes.johnvial.info/digital_advertising_glossary.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://notes.johnvial.info/haskell.html" rel="bookmark"
-                           title="Permalink to Doing Haskel Tutorial">Doing Haskel Tutorial</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-04-22T00:00:00+08:00">
-                Published: Wed 22 April 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://notes.johnvial.info/author/john-vial.html">John Vial</a>
-        </address>
-<p>In <a href="http://notes.johnvial.info/category/misc.html">misc</a>.</p>
-<p>tags: <a href="http://notes.johnvial.info/tag/programming.html">programming</a> </p>
-</footer><!-- /.post-info -->                <p>Just some from the first chapter of the online version of <a href="http://learnyouahaskell.com/">Learn you a Haskell</a>.</p>
+            </section>
+                <div class="eevee-divider mdl-color--accent" role="presentation">
+                </div>
+                <div class="eevee-divider-to-top">
+                    <a href="#top" title="Back to the top of the page"
+                       itemprop="url">
+                        Back to the top of the page
+                    </a>
+                </div>
+        </article>
+        <article class="eevee-padding" itemscope
+                 itemtype="http://schema.org/BlogPosting">
+<meta itemprop="accessibilityControl" content="fullKeyboardControl">
+<meta itemprop="accessibilityControl" content="fullMouseControl">
+<meta itemprop="accessibilityControl" content="bookmarks">
+<meta itemprop="accessibilityControl" content="captions">
+<meta itemprop="accessibilityControl" content="alternativeText">
+<meta itemprop="accessibilityControl" content="index">
+<meta itemprop="accessibilityControl" content="readingOrder">
+<meta itemprop="accessibilityControl" content="structuralNavigation">
+<meta itemprop="accessibilityControl" content="tableOfContents">
+<meta itemprop="accessibilityHazard" content="noFlashingHazard">
+<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard">
+<meta itemprop="accessibilityHazard" content="noSoundHazard">
+<meta itemprop="accessibilityAPI" content="ARIA">
+    <div itemprop="author" itemscope
+         itemtype="https://schema.org/Person" role="presentation">
+        <a href="http://notes.johnvial.info/author/john-vial.html" class="hidden"
+           itemprop="url" role="presentation">
+            <span class="hidden" itemprop="name" role="presentation">
+                John Vial
+            </span>
+        </a>
+    </div>
+        <meta itemprop="keywords"
+              content="programming">
+        <meta itemprop="keywords" content="misc">
+            <div class="eevee-meta mdl-color-text--grey-500">
+                <time datetime="2015-04-22T00:00:00+08:00"
+                      itemprop="datePublished">
+                    Wed 22 April 2015
+                </time>
+            </div>
+            <h2 itemprop="name" class="article-title">
+                <a href="http://notes.johnvial.info/haskell.html" rel="bookmark"
+                   title="Permalink to 'Doing Haskel Tutorial'"
+                   itemprop="url">
+                Doing Haskel Tutorial
+                </a>
+            </h2>
+            <section itemprop="articleBody" class="summary-content">
+                <p>Just some from the first chapter of the online version of <a href="http://learnyouahaskell.com/">Learn you a Haskell</a>.</p>
 <h1>1 Starting Out</h1>
 <p><a href="http://learnyouahaskell.com/starting-out">link</a></p>
 <ul>
 <li>make prompt prettier using <code>:set prompt "ghci&gt; "</code></li>
 <li><code>50 * -1</code> is an error, must do `50 * (-1)'. It seems to me that this is something to do with how whatever Haskell equivalent …</li></ul>
-                <a class="readmore" href="http://notes.johnvial.info/haskell.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://upright.media/">Upright Media</a></li>
-                            <li><a href="http://fast.ai/">Fast.ai</a></li>
-                            <li><a href="http://pmlg.org">Perth ML Group</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://notes.johnvial.info/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="http://github.com/johnny555">github</a></li>
-                            <li><a href="http://au.linkedin.com/in/johnvial">linkedin</a></li>
-                            <li><a href="http://twitter.com/JohnVial">twitter</a></li>
-                            <li><a href="http://scholar.google.com.au/citations?user=Tn8_5HQAAAAJ&hl=en">scholar</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
+            </section>
+        </article>
+    <div class="eevee-page-spacer" role="presentation"></div>
+                </div>
+            </div>
+        </main>
+            <div class="eevee-pagination__container eevee-container mdl-grid">
+                <div role="presentation"
+                     class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+<nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Pagination">
+    <div class="eevee-spacer"></div>
+</nav>                </div>
+            </div>
+        <footer class="mdl-mega-footer" itemscope
+                itemtype="http://schema.org/SiteNavigationElement">
+            <div class="mdl-mega-footer--top-section">
+                <div class="mdl-mega-footer--drop-down-section">
+                    <ul class="mdl-mega-footer--link-list">
+                        <li>
+                            <a href="#top" itemprop="url"
+                               title="Back to the top of the page">
+                                Back to the top of the page
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+<div class="mdl-mega-footer--middle-section" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Footer navigation">
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Categories</h1>
+        <ul class="mdl-mega-footer--link-list">
+                <li>
+                    <a href="http://notes.johnvial.info/category/misc.html" itemprop="url"
+                       rel="bookmark">
+                        misc
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Social</h1>
+        <ul class="mdl-mega-footer--link-list">
+                <li>
+                    <a href="http://github.com/johnny555" itemprop="url" rel="bookmark">
+                        github
+                    </a>
+                </li>
+                <li>
+                    <a href="http://au.linkedin.com/in/johnvial" itemprop="url" rel="bookmark">
+                        linkedin
+                    </a>
+                </li>
+                <li>
+                    <a href="http://twitter.com/JohnVial" itemprop="url" rel="bookmark">
+                        twitter
+                    </a>
+                </li>
+                <li>
+                    <a href="http://scholar.google.com.au/citations?user=Tn8_5HQAAAAJ&hl=en" itemprop="url" rel="bookmark">
+                        scholar
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Links</h1>
+        <ul class="mdl-mega-footer--link-list">
+                <li>
+                    <a href="http://upright.media/" itemprop="url" rel="bookmark">
+                        Upright Media
+                    </a>
+                </li>
+                <li>
+                    <a href="http://fast.ai/" itemprop="url" rel="bookmark">
+                        Fast.ai
+                    </a>
+                </li>
+                <li>
+                    <a href="http://pmlg.org" itemprop="url" rel="bookmark">
+                        Perth ML Group
+                    </a>
+                </li>
+        </ul>
+    </div>
+</div>            <div class="mdl-mega-footer--bottom-section">
+                <div class="mdl-logo">
+                    <a href="http://notes.johnvial.info" rel="bookmark" itemprop="url"
+                       title="John's Notes">
+                        John's Notes
+                    </a>
+                </div>
+                    <ul class="eevee-footer mdl-mega-footer--link-list">
+                            <li>Powered by love &amp; rainbow sparkles.</li>
+                            <li><a href="https://kura.io/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.io/" title="kura.io">kura.io</a></li>
+                    </ul>
+            </div>
+        </footer>
+    </div>
+    <link rel="stylesheet"
+          href="//code.getmdl.io/1.1.3/material.blue-pink.min.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/material-icons.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/pygments.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/eevee.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/custom.css">
+        <script async src="http://notes.johnvial.info/theme/js/material.js">
+        </script>
 </body>
 </html>
