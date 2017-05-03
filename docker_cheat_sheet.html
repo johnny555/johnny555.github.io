@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Docker Cheat Sheet</title>
+        <link rel="stylesheet" href="http://notes.johnvial.info/theme/css/main.css" />
+        <link href="http://notes.johnvial.info/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="John's Notes Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://notes.johnvial.info/">John's Notes </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="http://notes.johnvial.info/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://notes.johnvial.info/docker_cheat_sheet.html" rel="bookmark"
+           title="Permalink to Docker Cheat Sheet">Docker Cheat Sheet</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-05-03T13:00:00+08:00">
+                Published: Wed 03 May 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://notes.johnvial.info/author/john-vial.html">John Vial</a>
+        </address>
+<p>In <a href="http://notes.johnvial.info/category/misc.html">misc</a>.</p>
+<p>tags: <a href="http://notes.johnvial.info/tag/programming.html">programming</a> <a href="http://notes.johnvial.info/tag/docker.html">docker</a> </p>
+</footer><!-- /.post-info -->      <p><a href="http://docker.com">Docker</a> is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.</p>
+<p>This post is just a list of useful commands and things to know about docker.</p>
+<ul>
+<li><code>RUN &lt;command&gt;</code> In a dockerfile, the RUN directive executes the <code>&lt;command&gt;</code> and then creates a new layer in the dockerfile.</li>
+<li><code>CMD [...]</code> A CMD, this command is run whenever the docker image is run without any other commands. See <a href="http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/">RUN-vs-CMD</a></li>
+<li><code>docker images</code> will list the images currently available in Docker.</li>
+<li><code>docker ps</code> will list the images currently running.</li>
+<li><code>docker exec -it &lt;instance_name&gt; bash</code> will start a bash shell inside of the docker instance name <code>&lt;instance_name&gt;</code>. Unfortunately, this is different to the image name.</li>
+<li><code>docker-compose up</code> Assumes the presence of a docker-compose.yml file. Will run the docker container configuration described in docker-compose.yml</li>
+<li><code>docker-compose -f &lt;filename&gt; up</code> run the filename <code>&lt;filename&gt;</code> instead of default.</li>
+<li><code>docker-compose up --build</code> Rebulids everything described in the docker-compes.yml file.</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://upright.media/">Upright Media</a></li>
+                            <li><a href="http://fast.ai/">Fast.ai</a></li>
+                            <li><a href="http://pmlg.org">Perth ML Group</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://notes.johnvial.info/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="http://github.com/johnny555">github</a></li>
+                            <li><a href="http://au.linkedin.com/in/johnvial">linkedin</a></li>
+                            <li><a href="http://twitter.com/JohnVial">twitter</a></li>
+                            <li><a href="http://scholar.google.com.au/citations?user=Tn8_5HQAAAAJ&hl=en">scholar</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
