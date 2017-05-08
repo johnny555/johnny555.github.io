@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>John's Notes - programming</title><link href="http://notes.johnvial.info/" rel="alternate"></link><link href="http://notes.johnvial.info/feeds/programming.atom.xml" rel="self"></link><id>http://notes.johnvial.info/</id><updated>2017-05-03T13:00:00+08:00</updated><entry><title>Docker Cheat Sheet</title><link href="http://notes.johnvial.info/docker_cheat_sheet.html" rel="alternate"></link><published>2017-05-03T13:00:00+08:00</published><updated>2017-05-03T13:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-03:/docker_cheat_sheet.html</id><summary type="html">&lt;p&gt;&lt;a href="http://docker.com"&gt;Docker&lt;/a&gt; is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.&lt;/p&gt;
+&lt;p&gt;This post …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://docker.com"&gt;Docker&lt;/a&gt; is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.&lt;/p&gt;
+&lt;p&gt;This post is just a list of useful commands and things to know about docker.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;RUN &amp;lt;command&amp;gt;&lt;/code&gt; In a dockerfile, the RUN directive executes the &lt;code&gt;&amp;lt;command&amp;gt;&lt;/code&gt; and then creates a new layer in the dockerfile.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CMD [...]&lt;/code&gt; A CMD, this command is run whenever the docker image is run without any other commands. See &lt;a href="http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/"&gt;RUN-vs-CMD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker images&lt;/code&gt; will list the images currently available in Docker.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker ps&lt;/code&gt; will list the images currently running.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker exec -it &amp;lt;instance_name&amp;gt; bash&lt;/code&gt; will start a bash shell inside of the docker instance name &lt;code&gt;&amp;lt;instance_name&amp;gt;&lt;/code&gt;. Unfortunately, this is different to the image name.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker-compose up&lt;/code&gt; Assumes the presence of a docker-compose.yml file. Will run the docker container configuration described in docker-compose.yml&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker-compose -f &amp;lt;filename&amp;gt; up&lt;/code&gt; run the filename &lt;code&gt;&amp;lt;filename&amp;gt;&lt;/code&gt; instead of default.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker-compose up --build&lt;/code&gt; Rebulids everything described in the docker-compes.yml file.&lt;/li&gt;
+&lt;/ul&gt;</content><category term="programming"></category><category term="docker"></category></entry><entry><title>Doing Haskel Tutorial</title><link href="http://notes.johnvial.info/haskell.html" rel="alternate"></link><published>2015-04-22T00:00:00+08:00</published><updated>2015-04-22T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2015-04-22:/haskell.html</id><summary type="html">&lt;p&gt;Just some from the first chapter of the online version of &lt;a href="http://learnyouahaskell.com/"&gt;Learn you a Haskell&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;1 Starting Out&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://learnyouahaskell.com/starting-out"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make prompt prettier using &lt;code&gt;:set prompt "ghci&amp;gt; "&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;50 * -1&lt;/code&gt; is an error, must do `50 * (-1)'. It seems to me that this is something to do with how whatever Haskell equivalent …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Just some from the first chapter of the online version of &lt;a href="http://learnyouahaskell.com/"&gt;Learn you a Haskell&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;1 Starting Out&lt;/h1&gt;
+&lt;p&gt;&lt;a href="http://learnyouahaskell.com/starting-out"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make prompt prettier using &lt;code&gt;:set prompt "ghci&amp;gt; "&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;50 * -1&lt;/code&gt; is an error, must do `50 * (-1)'. It seems to me that this is something to do with how whatever Haskell equivalent of operators is.&lt;/li&gt;
+&lt;li&gt;ok, so * is a function, whose arguments are but between it, its an &lt;em&gt;infix&lt;/em&gt; function.&lt;/li&gt;
+&lt;li&gt;functions are called by writing name, space, arguments&lt;/li&gt;
+&lt;li&gt;parentheses are only used to group expressions into an argument.&lt;/li&gt;
+&lt;li&gt;an &lt;code&gt;=&lt;/code&gt; is used to define functions.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:l&lt;/code&gt; for load to load a &lt;code&gt;.hs&lt;/code&gt; file.&lt;/li&gt;
+&lt;li&gt;function names cannot begin with capital letters, the character `` is ok in a function name.&lt;/li&gt;
+&lt;li&gt;to define a list, use the keyword &lt;code&gt;let&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;index a list usin &lt;code&gt;!!&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;add to end of list with &lt;code&gt;++&lt;/code&gt; add to begining with &lt;code&gt;:&lt;/code&gt;, note that adding to end is slow.&lt;/li&gt;
+&lt;li&gt;ranges done using the &lt;code&gt;..&lt;/code&gt;, i.e. &lt;code&gt;[1..20]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;tuples are defined using parentheses, however they are of fixed size but can contain mixed types.&lt;/li&gt;
+&lt;li&gt;list comprehensions are awesome. The &lt;code&gt;|&lt;/code&gt; defines the predicates and domains , the &lt;code&gt;&amp;lt;-&lt;/code&gt; assigns sets to a variable, and commas separate the conditions.&lt;/li&gt;
+&lt;/ul&gt;</content><category term="programming"></category></entry></feed>

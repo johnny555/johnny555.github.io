@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>John's Notes - business</title><link href="http://notes.johnvial.info/" rel="alternate"></link><link href="http://notes.johnvial.info/feeds/business.atom.xml" rel="self"></link><id>http://notes.johnvial.info/</id><updated>2017-05-08T00:00:00+08:00</updated><entry><title>Getting a 10x</title><link href="http://notes.johnvial.info/getting-a-10x.html" rel="alternate"></link><published>2017-05-08T00:00:00+08:00</published><updated>2017-05-08T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-08:/getting-a-10x.html</id><summary type="html">&lt;p&gt;What approach links Jeremy Howard and Elon Musk? I recently watched Elon's interview on TEDx, and I've also been watching Part 2 of the Fast.AI course by Jeremy Howard.&lt;/p&gt;
+&lt;p&gt;Elon was talking about building a 10x solution to boring machines. He broke it down into sub components, such as …&lt;/p&gt;</summary><content type="html">&lt;p&gt;What approach links Jeremy Howard and Elon Musk? I recently watched Elon's interview on TEDx, and I've also been watching Part 2 of the Fast.AI course by Jeremy Howard.&lt;/p&gt;
+&lt;p&gt;Elon was talking about building a 10x solution to boring machines. He broke it down into sub components, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Boring at the front and reinforcing at the back can give a 2x speed up.&lt;/li&gt;
+&lt;li&gt;The cost of boring is proportional to the diameter of the hole, by halving the diameter we can get a 4x cost reduction.&lt;/li&gt;
+&lt;li&gt;By using the machine closer to it's thermal and energy limit we can get another 1.5x.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Elon, then multiplied these (2x4x1.5) and claimed that it was
+approximately a 10x speed improvement.&lt;/p&gt;
+&lt;p&gt;Jeremy also performed a similar calculation, but instead of 10x'ing a business, he was 10x'ing computation speed. Jeremy's logic was as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We can use SIMD to get a 6x speed up for computation that has been
+  optimized to use the SIMD instructions.&lt;/li&gt;
+&lt;li&gt;We can use Parallel processing to usally get 2-4x speed up on a standard computer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Jeremy then claims that you can add these (6 + 4) to get a roughly 10x speed up.&lt;/p&gt;
+&lt;p&gt;It's interesting that they disagree on how to combine the
+improvement. However, they both follow a similar logical path. I think
+that this is a good way to build up a 10x advantage where no
+single technology can get you there.&lt;/p&gt;</content></entry></feed>

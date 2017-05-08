@@ -1,5 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>John's Notes - misc</title><link href="http://notes.johnvial.info/" rel="alternate"></link><link href="http://notes.johnvial.info/feeds/misc.atom.xml" rel="self"></link><id>http://notes.johnvial.info/</id><updated>2017-05-03T16:00:00+08:00</updated><entry><title>Review of 5 Digital Trends at This Years New fronts</title><link href="http://notes.johnvial.info/five_digital_trends.html" rel="alternate"></link><published>2017-05-03T16:00:00+08:00</published><updated>2017-05-03T16:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-03:/five_digital_trends.html</id><summary type="html">&lt;p&gt;Here is another interesting AdTech article, again related to the New
+<feed xmlns="http://www.w3.org/2005/Atom"><title>John's Notes - adtech</title><link href="http://notes.johnvial.info/" rel="alternate"></link><link href="http://notes.johnvial.info/feeds/adtech.atom.xml" rel="self"></link><id>http://notes.johnvial.info/</id><updated>2017-05-05T00:00:00+08:00</updated><entry><title>Ad Industry Sectors</title><link href="http://notes.johnvial.info/ad-industry-sectors.html" rel="alternate"></link><published>2017-05-05T00:00:00+08:00</published><updated>2017-05-05T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-05:/ad-industry-sectors.html</id><summary type="html">&lt;p&gt;It is easy to be confused by the complexity of the advertising
+industry. I am studying it so I can understand my future customers.&lt;/p&gt;
+&lt;p&gt;This article will explore the high level choices that the brand
+&lt;em&gt;Cowboy Binoculars&lt;/em&gt; has in advertising their product (a pair of
+binoculars well suited for the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It is easy to be confused by the complexity of the advertising
+industry. I am studying it so I can understand my future customers.&lt;/p&gt;
+&lt;p&gt;This article will explore the high level choices that the brand
+&lt;em&gt;Cowboy Binoculars&lt;/em&gt; has in advertising their product (a pair of
+binoculars well suited for the modern cowboy). Observe Cowboy Binoculars brand below:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Cowboy Binoculars" src="/images/cowboyBinoculars.png"&gt;.&lt;/p&gt;
+&lt;p&gt;In
+2015
+&lt;a href="https://www.bloomberg.com/gadfly/articles/2015-12-08/digital-ads-on-track-to-overtake-tv-ads-by-2017"&gt;Bloomberg&lt;/a&gt; made
+predictions about the future market size of advertising industry
+segments in 2017, specifically that
+digital ads would overtake TV ads by 2017. A recent article
+by
+&lt;a href="http://adage.com/article/digital/digital-ad-revenue-surpasses-tv-desktop-iab/308808/"&gt;adage.com&lt;/a&gt; observes
+that this prediction has already occurred.&lt;/p&gt;
+&lt;h1&gt;TV Advertising&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="TV" src="/images/tv.png"&gt;&lt;/p&gt;
+&lt;p&gt;When I think of advertising, the form that most easily comes to mind
+are advertisements on TV. TV holds a large share of the advertising
+market, predicted at 37%. This market share has been on the decline, and a recent report by PWC suggests that TV is now primarily watched by sports fans (
+&lt;a href="http://www.pwc.com/gx/en/industries/entertainment-media/outlook/segment-insights/tv-advertising.html"&gt;PWC TV Advertising Insights&lt;/a&gt; ).&lt;/p&gt;
+&lt;h1&gt;Print Media: Newspapers and Magazines&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="Newspapers" src="/images/newspapers.png"&gt; &lt;img alt="Magazines" src="/images/magazines.png"&gt;&lt;/p&gt;
+&lt;p&gt;A much older form of advertising is in print media. Newspapers and
+Magazines are still commonplace and are an advertising channel, yet
+these forms of advertising have a very small market share, with a
+predicted  9% and 4% of the advertising spend respectively.&lt;/p&gt;
+&lt;h1&gt;Radio&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="Radio" src="/images/radio.png"&gt;
+Radio Ads, such as traffic reports that roll into ads, have a predicted 6% of the advertising market share.&lt;/p&gt;
+&lt;h1&gt;Out of Home&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="outofhome" src="/images/outofhome.png"&gt;&lt;/p&gt;
+&lt;p&gt;An important segment that is growing is the out of home segment
+(6%). This segment has a strange name but includes billboards on the
+side of buildings, digital street signs on bus stops and
+advertisements on taxi's and buses. A recent report by &lt;a href="https://www.pwc.com/gx/en/industries/entertainment-media/outlook/segment-insights/out-of-home-advertising.html"&gt;PWC&lt;/a&gt; includes this category in their market segment breakdown.&lt;/p&gt;
+&lt;h1&gt;Digital&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="Digital" src="/images/digital.png"&gt;&lt;/p&gt;
+&lt;p&gt;An increasingly important market segment is the Digital Advertising market. As mentioned in the introduction, it has recently supplanted TV as the largest advertising segment, having achieved &lt;a href="http://adage.com/article/digital/digital-ad-revenue-surpasses-tv-desktop-iab/308808/"&gt;38% market share&lt;/a&gt; suggests that these predictions on market share have recently been found to be true.&lt;/p&gt;
+&lt;p&gt;Digital advertising includes all ads that occur through mobie phones
+or computers, such as: Product recommendations on shopping sites such
+as Amazon.com, Search related advertisements appearing on Google
+Search, social network feed advertisements such as Facebook feed
+advertisements, banner ads and pre-roll advertisements that occur
+before videos on YouTube.&lt;/p&gt;</content></entry><entry><title>Collecting Advertising Market Data</title><link href="http://notes.johnvial.info/collecting_advertising_market_data.html" rel="alternate"></link><published>2017-05-05T00:00:00+08:00</published><updated>2017-05-05T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-05:/collecting_advertising_market_data.html</id><summary type="html">&lt;p&gt;&lt;img alt="Data" src="/images/collecting_market_data.png"&gt;&lt;/p&gt;
+&lt;p&gt;It's easy to find articles on the internet that predict the next
+movements of any particular market. I prefer to find data and conduct
+my own analysis. This list is a post of sites that I think can be
+useful data sources for my future analysis. Unfortunately, some data is …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Data" src="/images/collecting_market_data.png"&gt;&lt;/p&gt;
+&lt;p&gt;It's easy to find articles on the internet that predict the next
+movements of any particular market. I prefer to find data and conduct
+my own analysis. This list is a post of sites that I think can be
+useful data sources for my future analysis. Unfortunately, some data is behind pay walls. I hope to find free sources of data if possible.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://magnaglobal.com/magna-releases-us-advertising-forecast-march-2017/"&gt;Magna Global March Forecast&lt;/a&gt; I'm not sure what Magna is yet, but they appear to be publishing data, and for free too!&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.statista.com/statistics/272850/global-advertising-forecast/"&gt;Global Ad Expenditure (Billions)&lt;/a&gt; This site, &lt;a href="https://www.statista.com"&gt;Statista&lt;/a&gt; appears to be collecting data and sharing it for a fee.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bloomberg.com/gadfly/articles/2015-12-08/digital-ads-on-track-to-overtake-tv-ads-by-2017"&gt;Digital Ads ontrack to overtake TV&lt;/a&gt; This site, which is the basis for my other post today, has some very cool charts on it, whose data I would love to have in a CSV.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.pwc.com/gx/en/industries/entertainment-media/outlook/segment-insights/out-of-home-advertising.html"&gt;PWC Out of home advertising&lt;/a&gt; although PWC charges for its reports, it seems to give away alot for free on this page.&lt;/li&gt;
+&lt;/ul&gt;</content></entry><entry><title>Max reach, view-ability and Digital &gt; TV</title><link href="http://notes.johnvial.info/max-reach-view-ability-and-digital-tv.html" rel="alternate"></link><published>2017-05-05T00:00:00+08:00</published><updated>2017-05-05T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-05:/max-reach-view-ability-and-digital-tv.html</id><summary type="html">&lt;p&gt;&lt;img alt="Snapchat Homepage Takeover" src="/images/snapchat_takeover.png"&gt;&lt;/p&gt;
+&lt;p&gt;This is a combined post, where I note about some news articles I have read.&lt;/p&gt;
+&lt;h1&gt;Snapchat Home Page Takeover&lt;/h1&gt;
+&lt;p&gt;The first article is: &lt;a href="http://marketingland.com/snap-ads-max-reach-snapchats-version-home-page-takeover-213644"&gt;Snapchat's home page takeover&lt;/a&gt;.
+This article describes a new offering Snapchat is giving advertisers. The offering is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Snapchat’s version guarantees that a brand’s ad will …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Snapchat Homepage Takeover" src="/images/snapchat_takeover.png"&gt;&lt;/p&gt;
+&lt;p&gt;This is a combined post, where I note about some news articles I have read.&lt;/p&gt;
+&lt;h1&gt;Snapchat Home Page Takeover&lt;/h1&gt;
+&lt;p&gt;The first article is: &lt;a href="http://marketingland.com/snap-ads-max-reach-snapchats-version-home-page-takeover-213644"&gt;Snapchat's home page takeover&lt;/a&gt;.
+This article describes a new offering Snapchat is giving advertisers. The offering is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Snapchat’s version guarantees that a brand’s ad will be served to everyone in the US who is shown a Snap Ad on a given day.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I found this use of &lt;em&gt;takeover&lt;/em&gt; surprising, as I had previously thought
+that a site &lt;em&gt;takeover&lt;/em&gt; was a bad thing. In
+my &lt;a href="http://notes.johnvial.info/digital_advertising_glossary.html"&gt;glossary post&lt;/a&gt; it's described as
+when a single brand own all of the ad-slots on a particular
+website. From my perspective this is inefficient use of real estate,
+but I think that the terms use in mobile advertising is
+different. A brand may want to have massive reach, and some kind of
+guarantee that &lt;em&gt;everyone&lt;/em&gt; will see an ad could be good for a
+brand. It's interesting that something that could be seen as a bug,
+actually is now a premium feature!&lt;/p&gt;
+&lt;h1&gt;Ad metrics not really a thing&lt;/h1&gt;
+&lt;p&gt;The second article is: &lt;a href="http://www.thedrum.com/news/2017/05/03/despite-widespread-mistrust-metrics-viewability-not-really-thing-video-advertising"&gt;Ad metrics not really a thing&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A key point of this article is that younger executives in advertising
+companies believe &lt;em&gt;viewability&lt;/em&gt; (the tracking of whether an ad was
+viewed or not), to be much more important than older advertising
+executives. The article goes on to suggest this is because TV was
+difficult to measure, so it is considered OK for digital video to also
+have poor metrics by older executives.&lt;/p&gt;
+&lt;p&gt;I must admit, I'm not sure what they mean by agency executives in this
+case. Is this referring to the executives at advertising agencies,
+brand's, some other organisations, or everyone?&lt;/p&gt;
+&lt;p&gt;Dangerously for digital video, 60% of the under 30's felt that video
+was an ineffective medium. The article briefly mentions some terms
+with regard to metrics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;good audience metrics&lt;/em&gt; 56% of executives thought this was
+  important. I going to assume this means a good understanding of who
+  the target audience is.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;context and quality&lt;/em&gt; 62% of executives thought this was
+  important. I don't understand how it is different to &lt;em&gt;good audience metrics&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;GroupM&lt;/em&gt;, &lt;em&gt;AVOC&lt;/em&gt; (audible and viewable on completion): were mentioned
+  as "advanced" metrics in use for video ads. AVOC sounds self
+  explanatory, but I'm not sure about GroupM.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Importantly, the survey suggests some &lt;em&gt;offers&lt;/em&gt; that are not
+successfully convincing executives to invest more on-line:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;fraud-free guarantees&lt;/em&gt; A guarantee that no ad-fraud will happen?&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;standardised success metrics&lt;/em&gt; Perhaps the claim that metrics are
+  too difficult to understand is not really true.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;premium inventory&lt;/em&gt; I guess this is the &lt;em&gt;takeover&lt;/em&gt; option Snapchat is offering above?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The survey then lists some things that would entice executives to invest more:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;pricing transparency&lt;/em&gt; I wonder how we could improve this?&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;inventory quality&lt;/em&gt; This is related to the earlier comments on context and quality&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;new formats such as vertical or 360 degree video&lt;/em&gt; Something that
+  would convince 51% of executives to consider more advertising.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I think this survey was quite interesting, I'd love to see the raw
+data. Apparently it was from a company named Turn, but they are not linked on the website.&lt;/p&gt;
+&lt;h1&gt;Digital Advertising Surpasses TV&lt;/h1&gt;
+&lt;p&gt;The third article for today is: &lt;a href="http://adage.com/article/digital/digital-ad-revenue-surpasses-tv-desktop-iab/308808/"&gt;Digital Advertising Surpasses TV&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is actually a review of a recent IAB report, which was covered in
+another article I've reviewed. So this is a review of a review!!!&lt;/p&gt;
+&lt;p&gt;The key takeaway is that Digital Advertising is now bigger than TV,
+with digital video alone having grown 53% in the last year to $9.1
+Billion. Other important statistics were: mobile revenue grew by 145%
+to $4.2 Billion, largely driven by mobile search, and that Digital
+radio is supplanting terrestrial radio.&lt;/p&gt;</content></entry><entry><title>Understanding the advertising industry</title><link href="http://notes.johnvial.info/understanding_the_advertising_industry.html" rel="alternate"></link><published>2017-05-05T00:00:00+08:00</published><updated>2017-05-05T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-05:/understanding_the_advertising_industry.html</id><summary type="html">&lt;p&gt;During a discussion with my co-founder we started white-boarding the
+structure of the advertising industry. It turns out that its extremely
+complicated.&lt;/p&gt;
+&lt;p&gt;Let's try to break it down. Here is what it looks like if you want to advertise on
+general websites, blogs or mobile phone apps.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="High level advertising structure" src="/images/ad_network_overview.png"&gt;.&lt;/p&gt;
+&lt;p&gt;That big crazy …&lt;/p&gt;</summary><content type="html">&lt;p&gt;During a discussion with my co-founder we started white-boarding the
+structure of the advertising industry. It turns out that its extremely
+complicated.&lt;/p&gt;
+&lt;p&gt;Let's try to break it down. Here is what it looks like if you want to advertise on
+general websites, blogs or mobile phone apps.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="High level advertising structure" src="/images/ad_network_overview.png"&gt;.&lt;/p&gt;
+&lt;p&gt;That big crazy block in the middle is a network of large companies
+that each play a role in the ecosystem. Each block can represent a
+large company that excels at providing one component in the
+ecosystem. From the perspective of our favourite brand, &lt;em&gt;Cowboy
+Binoculars&lt;/em&gt;, it is quite complicated, and they will usually employ an
+advertising agency to deal with it for them. The paths represent the
+different companies that you can choose from, and the colours
+represent many possible paths that could be taken.&lt;/p&gt;
+&lt;p&gt;However, this is not &lt;em&gt;Cowboy Binoculars&lt;/em&gt; only option, they could also
+choose to advertise inside one of the walled gardens of the web. In
+this instance the structure looks abit more like the following diagram.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="High level walled garden" src="/images/walled_garden_overview.png"&gt;&lt;/p&gt;
+&lt;p&gt;Here, we see that there are fewer companies to deal with, as the
+walled garden owner (Face-book, Google search, etc), controls the
+complete chain of ad delivery. Note that &lt;em&gt;Cowboy Binoculars&lt;/em&gt; might
+still employ an ad agency, and that ad agency might use other
+companies, but once the ad is made it only deals with the large walled
+garden provider.&lt;/p&gt;</content></entry><entry><title>Review of 5 Digital Trends at This Years New fronts</title><link href="http://notes.johnvial.info/five_digital_trends.html" rel="alternate"></link><published>2017-05-03T16:00:00+08:00</published><updated>2017-05-03T16:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-03:/five_digital_trends.html</id><summary type="html">&lt;p&gt;Here is another interesting AdTech article, again related to the New
 Fronts conference that appears to be on
 soon. &lt;a href="http://www.adweek.com/tv-video/5-digital-video-trends-to-watch-for-at-this-years-newfronts/"&gt;5 Digital Video Trends to Watch for at this years NewFronts&lt;/a&gt;. My
 previous article is here &lt;a href="http://notes.johnvial.info/newfronts_conference.html"&gt;New Fronts&lt;/a&gt;.&lt;/p&gt;
@@ -55,19 +220,7 @@ That article also appears unremarkable, merely claiming that almost
 &lt;p&gt;This statement is nice, and could have alot of depth, but instead it is turned into
 an advertisement for the NewFronts conference, and a place to put another adweek link.&lt;/p&gt;
 &lt;h1&gt;This revolution is just getting started.&lt;/h1&gt;
-&lt;p&gt;Again, simply an ad for the NewFronts conference.&lt;/p&gt;</content><category term="adtech"></category></entry><entry><title>Docker Cheat Sheet</title><link href="http://notes.johnvial.info/docker_cheat_sheet.html" rel="alternate"></link><published>2017-05-03T13:00:00+08:00</published><updated>2017-05-03T13:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-03:/docker_cheat_sheet.html</id><summary type="html">&lt;p&gt;&lt;a href="http://docker.com"&gt;Docker&lt;/a&gt; is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.&lt;/p&gt;
-&lt;p&gt;This post …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://docker.com"&gt;Docker&lt;/a&gt; is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.&lt;/p&gt;
-&lt;p&gt;This post is just a list of useful commands and things to know about docker.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;RUN &amp;lt;command&amp;gt;&lt;/code&gt; In a dockerfile, the RUN directive executes the &lt;code&gt;&amp;lt;command&amp;gt;&lt;/code&gt; and then creates a new layer in the dockerfile.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;CMD [...]&lt;/code&gt; A CMD, this command is run whenever the docker image is run without any other commands. See &lt;a href="http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/"&gt;RUN-vs-CMD&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker images&lt;/code&gt; will list the images currently available in Docker.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker ps&lt;/code&gt; will list the images currently running.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker exec -it &amp;lt;instance_name&amp;gt; bash&lt;/code&gt; will start a bash shell inside of the docker instance name &lt;code&gt;&amp;lt;instance_name&amp;gt;&lt;/code&gt;. Unfortunately, this is different to the image name.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker-compose up&lt;/code&gt; Assumes the presence of a docker-compose.yml file. Will run the docker container configuration described in docker-compose.yml&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker-compose -f &amp;lt;filename&amp;gt; up&lt;/code&gt; run the filename &lt;code&gt;&amp;lt;filename&amp;gt;&lt;/code&gt; instead of default.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker-compose up --build&lt;/code&gt; Rebulids everything described in the docker-compes.yml file.&lt;/li&gt;
-&lt;/ul&gt;</content><category term="programming"></category><category term="docker"></category></entry><entry><title>NewFronts conference</title><link href="http://notes.johnvial.info/newfronts_conference.html" rel="alternate"></link><published>2017-05-02T00:00:00+08:00</published><updated>2017-05-02T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-02:/newfronts_conference.html</id><summary type="html">&lt;p&gt;Reflections on the article &lt;a href="http://www.adweek.com/tv-video/as-the-newfronts-begin-6-top-execs-discuss-videos-perils-and-promises/"&gt;As the Newronts Begin, 6 Top Execs Discuss Video's Perils and Promises&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Again, simply an ad for the NewFronts conference.&lt;/p&gt;</content><category term="adtech"></category></entry><entry><title>NewFronts conference</title><link href="http://notes.johnvial.info/newfronts_conference.html" rel="alternate"></link><published>2017-05-02T00:00:00+08:00</published><updated>2017-05-02T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-02:/newfronts_conference.html</id><summary type="html">&lt;p&gt;Reflections on the article &lt;a href="http://www.adweek.com/tv-video/as-the-newfronts-begin-6-top-execs-discuss-videos-perils-and-promises/"&gt;As the Newronts Begin, 6 Top Execs Discuss Video's Perils and Promises&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My co-founder Eric suggested that I should look at this article.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The digital video industry is just getting started, it's going to take atleast 10 years to play out and we don't know what's …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;Reflections on the article &lt;a href="http://www.adweek.com/tv-video/as-the-newfronts-begin-6-top-execs-discuss-videos-perils-and-promises/"&gt;As the Newronts Begin, 6 Top Execs Discuss Video's Perils and Promises&lt;/a&gt;.&lt;/p&gt;
@@ -179,27 +332,4 @@ link helped me. &lt;a href="http://studybreakmedia.com/glossary"&gt;Advertising 
 &lt;li&gt;&lt;em&gt;Roadblock (Takeover)&lt;/em&gt; When an advertiser takes over ever available ad spot on a page, this is called a RoadBlock or Takeover.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;ROS (Run of Site)&lt;/em&gt; Not sure about this definition. Seems to mean that you indicate a site to have your ads run on (such as google.com).&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;SOV (Share of Voice)&lt;/em&gt; The percentage of a particular advertisers inventory that an advertiser owns during a campaign.&lt;/li&gt;
-&lt;/ul&gt;</content><category term="adtech"></category></entry><entry><title>Doing Haskel Tutorial</title><link href="http://notes.johnvial.info/haskell.html" rel="alternate"></link><published>2015-04-22T00:00:00+08:00</published><updated>2015-04-22T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2015-04-22:/haskell.html</id><summary type="html">&lt;p&gt;Just some from the first chapter of the online version of &lt;a href="http://learnyouahaskell.com/"&gt;Learn you a Haskell&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;1 Starting Out&lt;/h1&gt;
-&lt;p&gt;&lt;a href="http://learnyouahaskell.com/starting-out"&gt;link&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;make prompt prettier using &lt;code&gt;:set prompt "ghci&amp;gt; "&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;50 * -1&lt;/code&gt; is an error, must do `50 * (-1)'. It seems to me that this is something to do with how whatever Haskell equivalent …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Just some from the first chapter of the online version of &lt;a href="http://learnyouahaskell.com/"&gt;Learn you a Haskell&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;1 Starting Out&lt;/h1&gt;
-&lt;p&gt;&lt;a href="http://learnyouahaskell.com/starting-out"&gt;link&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;make prompt prettier using &lt;code&gt;:set prompt "ghci&amp;gt; "&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;50 * -1&lt;/code&gt; is an error, must do `50 * (-1)'. It seems to me that this is something to do with how whatever Haskell equivalent of operators is.&lt;/li&gt;
-&lt;li&gt;ok, so * is a function, whose arguments are but between it, its an &lt;em&gt;infix&lt;/em&gt; function.&lt;/li&gt;
-&lt;li&gt;functions are called by writing name, space, arguments&lt;/li&gt;
-&lt;li&gt;parentheses are only used to group expressions into an argument.&lt;/li&gt;
-&lt;li&gt;an &lt;code&gt;=&lt;/code&gt; is used to define functions.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;:l&lt;/code&gt; for load to load a &lt;code&gt;.hs&lt;/code&gt; file.&lt;/li&gt;
-&lt;li&gt;function names cannot begin with capital letters, the character `` is ok in a function name.&lt;/li&gt;
-&lt;li&gt;to define a list, use the keyword &lt;code&gt;let&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;index a list usin &lt;code&gt;!!&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;add to end of list with &lt;code&gt;++&lt;/code&gt; add to begining with &lt;code&gt;:&lt;/code&gt;, note that adding to end is slow.&lt;/li&gt;
-&lt;li&gt;ranges done using the &lt;code&gt;..&lt;/code&gt;, i.e. &lt;code&gt;[1..20]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;tuples are defined using parentheses, however they are of fixed size but can contain mixed types.&lt;/li&gt;
-&lt;li&gt;list comprehensions are awesome. The &lt;code&gt;|&lt;/code&gt; defines the predicates and domains , the &lt;code&gt;&amp;lt;-&lt;/code&gt; assigns sets to a variable, and commas separate the conditions.&lt;/li&gt;
-&lt;/ul&gt;</content><category term="programming"></category></entry></feed>
+&lt;/ul&gt;</content><category term="adtech"></category></entry></feed>
