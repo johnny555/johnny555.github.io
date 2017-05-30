@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>John's Notes - programming</title><link href="http://notes.johnvial.info/" rel="alternate"></link><link href="http://notes.johnvial.info/feeds/programming.atom.xml" rel="self"></link><id>http://notes.johnvial.info/</id><updated>2017-05-03T13:00:00+08:00</updated><entry><title>Docker Cheat Sheet</title><link href="http://notes.johnvial.info/docker_cheat_sheet.html" rel="alternate"></link><published>2017-05-03T13:00:00+08:00</published><updated>2017-05-03T13:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-03:/docker_cheat_sheet.html</id><summary type="html">&lt;p&gt;&lt;a href="http://docker.com"&gt;Docker&lt;/a&gt; is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>John's Notes - programming</title><link href="http://notes.johnvial.info/" rel="alternate"></link><link href="http://notes.johnvial.info/feeds/programming.atom.xml" rel="self"></link><id>http://notes.johnvial.info/</id><updated>2017-05-29T00:00:00+08:00</updated><entry><title>Using BColz with Keras Generators</title><link href="http://notes.johnvial.info/using-bcolz-with-keras-generators.html" rel="alternate"></link><published>2017-05-29T00:00:00+08:00</published><updated>2017-05-29T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-29:/using-bcolz-with-keras-generators.html</id><summary type="html">&lt;p&gt;Have you ever run out of RAM when doing some Deep Learning computation
+on your laptop instead of the server? One approach to solving this is
+to write out the data to disk. An alternative is to write a custom
+generator that reads the data. Recently I was attempting to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Have you ever run out of RAM when doing some Deep Learning computation
+on your laptop instead of the server? One approach to solving this is
+to write out the data to disk. An alternative is to write a custom
+generator that reads the data. Recently I was attempting to implement
+Lesson 7 of the &lt;a href="http://course.fast.ai"&gt;Fast.ai&lt;/a&gt; and it ran incredibly
+slowly. My fix was to read the data into an on disk array, and then
+read from that array
+using &lt;a href="https://github.com/Blosc/bcolz"&gt;bcolz&lt;/a&gt;. Below is a function
+that you can use to convert a keras generator into a bcolz array:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;bcolz&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;tqdm&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;tqdm&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os.path&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;save_generator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gen&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data_dir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;labels_dir&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    Save the output from a generator without loading all images into memory.&lt;/span&gt;
+
+&lt;span class="sd"&gt;    Does not return anything, instead writes data to disk.&lt;/span&gt;
+
+&lt;span class="sd"&gt;    :gen: A Keras ImageDataGenerator object&lt;/span&gt;
+&lt;span class="sd"&gt;    :data_dir: The folder name to store the bcolz array representing the features in.&lt;/span&gt;
+&lt;span class="sd"&gt;    :labels_dir: The folder name to store the bcolz array representing the labels in.&lt;/span&gt;
+&lt;span class="sd"&gt;    :mode: the write mode. Set to &amp;#39;a&amp;#39; for append, set to &amp;#39;w&amp;#39; to overwrite existing data and &amp;#39;r&amp;#39; to read only.&lt;/span&gt;
+
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;directory&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;data_dir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;labels_dir&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;makedirs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;num_samples&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gen&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;samples&lt;/span&gt;
+
+    &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gen&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__next__&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+    &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bcolz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;carray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rootdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;data_dir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;labels&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bcolz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;carray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rootdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;labels_dir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tqdm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num_samples&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
+        &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gen&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__next__&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;labels&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;labels&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>Docker Cheat Sheet</title><link href="http://notes.johnvial.info/docker_cheat_sheet.html" rel="alternate"></link><published>2017-05-03T13:00:00+08:00</published><updated>2017-05-03T13:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-03:/docker_cheat_sheet.html</id><summary type="html">&lt;p&gt;&lt;a href="http://docker.com"&gt;Docker&lt;/a&gt; is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.&lt;/p&gt;
 &lt;p&gt;This post …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://docker.com"&gt;Docker&lt;/a&gt; is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.&lt;/p&gt;
 &lt;p&gt;This post is just a list of useful commands and things to know about docker.&lt;/p&gt;
 &lt;ul&gt;
