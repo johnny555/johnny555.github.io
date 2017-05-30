@@ -44,6 +44,12 @@ that you can use to convert a keras generator into a bcolz array:&lt;/p&gt;
         &lt;span class="n"&gt;labels&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="n"&gt;labels&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now if you want to load the data all you have to do is (assuming
+&lt;code&gt;data_dir&lt;/code&gt; is the folder location:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bcolz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data_dir&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>Docker Cheat Sheet</title><link href="http://notes.johnvial.info/docker_cheat_sheet.html" rel="alternate"></link><published>2017-05-03T13:00:00+08:00</published><updated>2017-05-03T13:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-03:/docker_cheat_sheet.html</id><summary type="html">&lt;p&gt;&lt;a href="http://docker.com"&gt;Docker&lt;/a&gt; is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.&lt;/p&gt;
 &lt;p&gt;This post …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://docker.com"&gt;Docker&lt;/a&gt; is a very useful tool for modern web development. It allows you encapsulate a computation with the operating system and associated libraries. In principle allowing you to worry less about implicit dependencies that you have on your code, as they must made clear by the docker file.&lt;/p&gt;
 &lt;p&gt;This post is just a list of useful commands and things to know about docker.&lt;/p&gt;
