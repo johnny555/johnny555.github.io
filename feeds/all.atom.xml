@@ -53,7 +53,18 @@ the company and somebody buys it ...&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Later again&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Girl: Is that REALLY true or are you just saying that to be positive?&lt;/p&gt;
+&lt;p&gt;Girl: Is that REALLY true or are you just saying that to be positive?
+Well, I'm glad it's happening.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And they get up and leave the coffee shop.&lt;/p&gt;
+&lt;p&gt;Random comments from another table:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;They added psuedo-random bubbles into the pipeline. I'm pretty sure
+it's patented.
+...
+I spent most of my time fighting internal, I'm never doing that again.
+...
+People are gonna fight for resources...&lt;/p&gt;
 &lt;/blockquote&gt;</content></entry><entry><title>Using BColz with Keras Generators</title><link href="http://notes.johnvial.info/using-bcolz-with-keras-generators.html" rel="alternate"></link><published>2017-05-29T00:00:00+08:00</published><updated>2017-05-29T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-29:/using-bcolz-with-keras-generators.html</id><summary type="html">&lt;p&gt;Have you ever run out of RAM when doing some Deep Learning computation
 on your laptop instead of the server? One approach to solving this is
 to write out the data to disk. An alternative is to write a custom
