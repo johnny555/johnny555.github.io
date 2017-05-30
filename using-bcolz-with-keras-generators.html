@@ -207,6 +207,31 @@ that you can use to convert a keras generator into a bcolz array:</p>
 'data_dir' is the folder location):</p>
 <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">bcolz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
 </pre></div>
+
+
+<p>Another problem I encountered is that I wanted to get the predictions
+from a pre-trained model and build on-top of that. However, this
+required a large amount of RAM. The following function allows you to
+write the results of this to disk.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">save_predictions</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">rootdir</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function will use BColz to save the predictions from a model. This is useful when you want to get the features from a</span>
+<span class="sd">    pretrained net and build something ontop of it without re-evaluating the network every time.</span>
+
+<span class="sd">    This function does not return anything and writes stuff to disk.</span>
+
+<span class="sd">    :model: A keras model.</span>
+<span class="sd">    :data: A Numpy dataframe, it is assumed that the first index is the batch index.</span>
+<span class="sd">    :roodir: The directory to store the bcolz data</span>
+<span class="sd">    :batchsize: The number of samples to run. Will depend upon your hardware.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">bcolz</span><span class="o">.</span><span class="n">carray</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">batch_size</span><span class="p">]),</span> <span class="n">rootdir</span><span class="o">=</span><span class="n">rootdir</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">batch_size</span> <span class="k">if</span> <span class="n">i</span><span class="o">+</span><span class="n">batch_size</span> <span class="o">&lt;</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">end</span><span class="p">]))</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+</pre></div>
             </section>
         </div>
     </article>

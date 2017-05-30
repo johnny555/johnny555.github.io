@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>John's Notes</title><link href="http://notes.johnvial.info/" rel="alternate"></link><link href="http://notes.johnvial.info/feeds/all.atom.xml" rel="self"></link><id>http://notes.johnvial.info/</id><updated>2017-05-29T00:00:00+08:00</updated><entry><title>Using BColz with Keras Generators</title><link href="http://notes.johnvial.info/using-bcolz-with-keras-generators.html" rel="alternate"></link><published>2017-05-29T00:00:00+08:00</published><updated>2017-05-29T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-29:/using-bcolz-with-keras-generators.html</id><summary type="html">&lt;p&gt;Have you ever run out of RAM when doing some Deep Learning computation
+<feed xmlns="http://www.w3.org/2005/Atom"><title>John's Notes</title><link href="http://notes.johnvial.info/" rel="alternate"></link><link href="http://notes.johnvial.info/feeds/all.atom.xml" rel="self"></link><id>http://notes.johnvial.info/</id><updated>2017-05-30T00:00:00+08:00</updated><entry><title>RedRock Cafe</title><link href="http://notes.johnvial.info/redrock-cafe.html" rel="alternate"></link><published>2017-05-30T00:00:00+08:00</published><updated>2017-05-30T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-30:/redrock-cafe.html</id><summary type="html">&lt;p&gt;On an unimposing corner, only 5 minutes walk from the Mountain View
+Caltrain station stands the RedRock cafe. Wooden finishings and
+liberal lick of red point is the theme. The coffee is good (by my
+Australian standards too!) but the best thing is the conversations
+that you overhear.&lt;/p&gt;
+&lt;p&gt;Behind me …&lt;/p&gt;</summary><content type="html">&lt;p&gt;On an unimposing corner, only 5 minutes walk from the Mountain View
+Caltrain station stands the RedRock cafe. Wooden finishings and
+liberal lick of red point is the theme. The coffee is good (by my
+Australian standards too!) but the best thing is the conversations
+that you overhear.&lt;/p&gt;
+&lt;p&gt;Behind me a young lady tries to convince her older co-founder or
+possible investor that her startup is "just like Apple", and that if a
+VC doesn't want to partner with them, then they probably just don't
+get it.&lt;/p&gt;
+&lt;p&gt;Next to me two co-founders are consoling each other to keep going:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It doesn't matter if they say that the problem may be too broad, as
+ long as our assumptions are still correct there MUST be a market
+ for it&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In a very out of character way, an older person is complaining about
+how crap it is that his fridge is rusty. Ahh, rusty fridges, a
+universal problem.&lt;/p&gt;
+&lt;p&gt;An older man appears to hold a phone interview at a nearby table. But
+instead of asking technical questions seems to be judging his prospective
+new hire by the age of his laptop. He also dismisses Apple:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some people think they [Apple] are innovative, and that they like to be
+deliberate with their hardware, and that's why they don't always have the
+latest ports. I just think they are lazy.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Suddenly, the Apple man decides to leave, citing that the cafe is not
+that private. He is quickly replaced by two gents who unroll a Chess
+board, and sit down with steaming tea. They speak in hushed tones as
+they get ready to do battle, placing each piece down with a satisfying
+knock.&lt;/p&gt;</content></entry><entry><title>Using BColz with Keras Generators</title><link href="http://notes.johnvial.info/using-bcolz-with-keras-generators.html" rel="alternate"></link><published>2017-05-29T00:00:00+08:00</published><updated>2017-05-29T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-29:/using-bcolz-with-keras-generators.html</id><summary type="html">&lt;p&gt;Have you ever run out of RAM when doing some Deep Learning computation
 on your laptop instead of the server? One approach to solving this is
 to write out the data to disk. An alternative is to write a custom
 generator that reads the data. Recently I was attempting to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Have you ever run out of RAM when doing some Deep Learning computation
@@ -50,6 +85,31 @@ that you can use to convert a keras generator into a bcolz array:&lt;/p&gt;
 &lt;p&gt;Now if you want to load the data all you have to do is (assuming
 'data_dir' is the folder location):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bcolz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data_dir&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Another problem I encountered is that I wanted to get the predictions
+from a pre-trained model and build on-top of that. However, this
+required a large amount of RAM. The following function allows you to
+write the results of this to disk.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;save_predictions&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rootdir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;batch_size&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    This function will use BColz to save the predictions from a model. This is useful when you want to get the features from a&lt;/span&gt;
+&lt;span class="sd"&gt;    pretrained net and build something ontop of it without re-evaluating the network every time.&lt;/span&gt;
+
+&lt;span class="sd"&gt;    This function does not return anything and writes stuff to disk.&lt;/span&gt;
+
+&lt;span class="sd"&gt;    :model: A keras model.&lt;/span&gt;
+&lt;span class="sd"&gt;    :data: A Numpy dataframe, it is assumed that the first index is the batch index.&lt;/span&gt;
+&lt;span class="sd"&gt;    :roodir: The directory to store the bcolz data&lt;/span&gt;
+&lt;span class="sd"&gt;    :batchsize: The number of samples to run. Will depend upon your hardware.&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bcolz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;carray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;batch_size&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt; &lt;span class="n"&gt;rootdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;rootdir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tqdm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;batch_size&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])):&lt;/span&gt;
+        &lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;batch_size&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;batch_size&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+    &lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>BBDO Video Rewind</title><link href="http://notes.johnvial.info/bbdo-video-rewind.html" rel="alternate"></link><published>2017-05-12T00:00:00+08:00</published><updated>2017-05-12T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-05-12:/bbdo-video-rewind.html</id><summary type="html">&lt;p&gt;BBDO recently released
 a
 &lt;a href="https://www.slideshare.net/juliancole/bbdo-2016-video-rewind-71974433"&gt;slide deck&lt;/a&gt; of
