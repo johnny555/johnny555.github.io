@@ -1,0 +1,3173 @@
+<!DOCTYPE html>
+<!--
+    (The MIT License)
+
+    Copyright (c) 2016 Kura
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the 'Software'), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<html lang="en">
+<head id="head">
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="alternate" href="http://notes.johnvial.info" hreflang="en" />
+<link rel="dns-prefetch" href="http://notes.johnvial.info">
+<link rel="dns-prefetch" href="//code.getmdl.io">
+    <link rel="dns-prefetch" href="//google-analytics.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="shortcut icon" href="http://notes.johnvial.info/favicon.ico">
+    <title>Fisheries Competition - Adding Bounding Box's</title>
+</head>
+<body>
+    <div class="eevee-layout mdl-layout mdl-js-layout mdl-color--grey-50">
+        <header class="eevee-header mdl-color--grey-50 mdl-color-text--grey-800"
+                itemscope itemtype="http://schema.org/WPHeader">
+            <div class="mdl-layout__header-row" id="top">
+                <div aria-expanded="false" role="button" tabindex="0"
+                     class="mdl-layout__drawer-button mdl-color-text--accent eevee-mobile-button mdl-layout--small-screen-only">
+                    <i class="material-icons">&#xE5D2;</i>
+                </div>
+                <span class="eevee-logo mdl-color-text--accent mdl-layout-title">
+                    <h2>
+                        <a href="http://notes.johnvial.info" rel="bookmark"
+                           title="John's Notes">
+                            John's Notes
+                        </a>
+                    </h2>
+                </span>
+                <div class="mdl-layout-spacer" role="presentation"></div>
+                <nav class="eevee-nav mdl-navigation mdl-layout--large-screen-only"
+                     itemscope itemtype="http://schema.org/SiteNavigationElement"
+                     aria-label="Header navigation">
+                </nav>
+            </div>
+        </header>
+        <div class="eevee-mobile-header mdl-layout__drawer mdl-color--white"
+             aria-hidden="true">
+            <span class="mdl-layout-title">
+                <h2 class="eevee-mobile-logo mdl-color-text--accent">
+                    John's Notes
+                </h2>
+            </span>
+            <div class="mdl-navigation mdl-color--white">
+                <nav class="eevee-nav mdl-navigation" itemscope
+                     itemtype="http://schema.org/SiteNavigationElement"
+                     aria-label="Header navigation">
+                    <a class="mdl-color-text--accent mdl-navigation__link"
+                       href="http://notes.johnvial.info" itemprop="url" rel="bookmark">
+                        Home
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="eevee-ribbon mdl-color--primary-dark" role="presentation">
+        </div>
+        <main class="eevee-main mdl-layout__content">
+            <div class="eevee-container mdl-grid">
+                <div role="presentation"
+                     class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                </div>
+                <div class="eevee-content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col"
+                     aria-label="Main content">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+<meta itemprop="accessibilityControl" content="fullKeyboardControl">
+<meta itemprop="accessibilityControl" content="fullMouseControl">
+<meta itemprop="accessibilityControl" content="bookmarks">
+<meta itemprop="accessibilityControl" content="captions">
+<meta itemprop="accessibilityControl" content="alternativeText">
+<meta itemprop="accessibilityControl" content="index">
+<meta itemprop="accessibilityControl" content="readingOrder">
+<meta itemprop="accessibilityControl" content="structuralNavigation">
+<meta itemprop="accessibilityControl" content="tableOfContents">
+<meta itemprop="accessibilityHazard" content="noFlashingHazard">
+<meta itemprop="accessibilityHazard" content="noMotionSimulationHazard">
+<meta itemprop="accessibilityHazard" content="noSoundHazard">
+<meta itemprop="accessibilityAPI" content="ARIA">
+    <div itemprop="author" itemscope
+         itemtype="https://schema.org/Person" role="presentation">
+        <a href="http://notes.johnvial.info/author/john-vial.html" class="hidden"
+           itemprop="url" role="presentation">
+            <span class="hidden" itemprop="name" role="presentation">
+                John Vial
+            </span>
+        </a>
+    </div>
+        <meta itemprop="keywords" content="notebooks">
+    <div class="eevee-meta eevee-share">
+        <div class="mdl-layout-spacer"></div>
+        <div>
+            <ul class="social-share mdl-navigation">
+                <li class="social-share__link social-share__link--twitter">
+                    <a href="https://twitter.com/intent/tweet?text=Fisheries%20Competition%20-%20Adding%20Bounding%20Box%27s&amp;url=http%3A//notes.johnvial.info/fisheries-part2.html"
+                       title="Share 'Fisheries Competition - Adding Bounding Box's' on Twitter"
+                       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235'); return false;">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="social-share__link social-share__link--facebook">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//notes.johnvial.info/fisheries-part2.html"
+                       title="Share 'Fisheries Competition - Adding Bounding Box's' on Facebook"
+                       onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="social-share__link social-share__link--google-plus">
+                    <a href="https://plus.google.com/share?url=http%3A//notes.johnvial.info/fisheries-part2.html"
+                       title="Share 'Fisheries Competition - Adding Bounding Box's' on Google+"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                        <i class="fa fa-google" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="social-share__link social-share__link--email">
+                    <a href="mailto:?subject=Fisheries%20Competition%20-%20Adding%20Bounding%20Box%27s&amp;body=Fisheries%20Competition%20-%20Adding%20Bounding%20Box%27s%20-%20http%3A//notes.johnvial.info/fisheries-part2.html%0A%0AFirst%2C%20lets%20explore%20the%20fisheries%20data%C3%82%C2%B6' via email">
+                        <i class="material-icons" aria-hidden="true">&#xE0E1;</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <div class="eevee-article">
+            <div class="eevee-meta mdl-color-text--grey-500">
+                <time datetime="2017-06-12T00:00:00+08:00"
+                      itemprop="datePublished">
+                    Mon 12 June 2017
+                </time>
+            </div>
+            <h1 itemprop="name">
+                <a href="http://notes.johnvial.info/fisheries-part2.html" rel="bookmark"
+                   title="Permalink to 'Fisheries Competition - Adding Bounding Box's'"
+                   itemprop="url">
+                    Fisheries Competition - Adding Bounding Box's
+                </a>
+            </h1>
+            <section itemprop="articleBody" class="article-content">
+                <style type="text/css">/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell > div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area > div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area > div.highlight > pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the <head> if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell > div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+</style>
+<style type="text/css">.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<style type="text/css">
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="First,-lets-explore-the-fisheries-data">First, lets explore the fisheries data<a class="anchor-link" href="#First,-lets-explore-the-fisheries-data">Â¶</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">keras</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span><span class="p">,</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="k">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">InputLayer</span><span class="p">,</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Conv2D</span><span class="p">,</span> <span class="n">MaxPooling2D</span><span class="p">,</span> <span class="n">GlobalMaxPool2D</span><span class="p">,</span> <span class="n">GlobalAveragePooling2D</span><span class="p">,</span> <span class="n">BatchNormalization</span>
+<span class="kn">from</span> <span class="nn">keras.preprocessing.image</span> <span class="k">import</span> <span class="n">ImageDataGenerator</span>
+<span class="kn">from</span> <span class="nn">keras.layers.core</span> <span class="k">import</span> <span class="n">Activation</span>
+
+<span class="kn">import</span> <span class="nn">PIL.Image</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">shutil</span> <span class="k">import</span> <span class="n">move</span> <span class="p">,</span> <span class="n">copy</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">join</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">split</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span> <span class="s1">'data'</span><span class="p">)</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'train'</span><span class="p">))</span>
+<span class="n">classes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Using TensorFlow backend.
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[1]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>['.DS_Store', 'ALB', 'BET', 'DOL', 'LAG', 'NoF', 'OTHER', 'SHARK', 'YFT']</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">boxes</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">'./data/boxes/'</span><span class="p">)</span>
+<span class="n">boxes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[4]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>['alb_labels.json',
+ 'bet_labels.json',
+ 'dol_labels.json',
+ 'lag_labels.json',
+ 'NoF_labels.json',
+ 'other_labels.json',
+ 'shark_labels.json']</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">classes</span> <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'.'</span><span class="p">]</span>
+<span class="n">classes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[5]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>['ALB', 'BET', 'DOL', 'LAG', 'NoF', 'OTHER', 'SHARK', 'YFT']</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="k">import</span> <span class="n">choice</span>
+
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="n">valid_ratio</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">num_sample_images</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">valid_path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'valid'</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">valid_path</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">valid_path</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">classes</span><span class="p">:</span>
+        <span class="n">cl_valid_path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">valid_path</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+        <span class="n">cl_train_path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'train'</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+        <span class="n">cl_sample_path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'sample'</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">cl_train_path</span><span class="p">,</span> <span class="s1">'*.jpg'</span><span class="p">))</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">cl_valid_path</span><span class="p">)</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">0.2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">))),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="p">[</span><span class="n">move</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">join</span><span class="p">(</span><span class="n">cl_valid_path</span><span class="p">,</span> <span class="n">split</span><span class="p">(</span><span class="n">v</span><span class="p">)[</span><span class="mi">1</span><span class="p">]))</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">valid</span><span class="p">]</span>
+        <span class="c1"># We don't want the sample to contain the validation data, so redo the glob after moving. </span>
+        <span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">cl_train_path</span><span class="p">,</span> <span class="s1">'*.jpg'</span><span class="p">))</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">cl_sample_path</span><span class="p">)</span>
+        <span class="n">sample</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">num_sample_images</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="p">[</span><span class="n">copy</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">join</span><span class="p">(</span><span class="n">cl_sample_path</span><span class="p">,</span> <span class="n">split</span><span class="p">(</span><span class="n">s</span><span class="p">)[</span><span class="mi">1</span><span class="p">]))</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bs</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">()</span>
+<span class="n">train_gen</span> <span class="o">=</span> <span class="n">gen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">'train'</span><span class="p">),</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">bs</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">valid_gen</span> <span class="o">=</span> <span class="n">gen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">'valid'</span><span class="p">),</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">bs</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">sample_gen</span> <span class="o">=</span> <span class="n">gen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">'sample'</span><span class="p">),</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">bs</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Found 3025 images belonging to 8 classes.
+Found 752 images belonging to 8 classes.
+Found 80 images belonging to 8 classes.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">bcolz</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="k">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+
+<span class="k">def</span> <span class="nf">save_generator</span><span class="p">(</span><span class="n">gen</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">,</span> <span class="n">labels_dir</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Save the output from a generator without loading all images into memory. </span>
+<span class="sd">    </span>
+<span class="sd">    Does not return anything, instead writes data to disk.</span>
+<span class="sd">    </span>
+<span class="sd">    :gen: A Keras ImageDataGenerator object</span>
+<span class="sd">    :data_dir: The folder name to store the bcolz array representing the features in. </span>
+<span class="sd">    :labels_dir: The folder name to store the bcolz array representing the labels in.</span>
+<span class="sd">    :mode: the write mode. Set to 'a' for append, set to 'w' to overwrite existing data and 'r' to read only. </span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">directory</span> <span class="ow">in</span> <span class="p">[</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">labels_dir</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+    
+    <span class="n">num_samples</span> <span class="o">=</span> <span class="n">gen</span><span class="o">.</span><span class="n">samples</span>
+    
+    <span class="n">d</span><span class="p">,</span><span class="n">l</span> <span class="o">=</span> <span class="n">gen</span><span class="o">.</span><span class="fm">__next__</span><span class="p">()</span>
+    
+    <span class="n">data</span> <span class="o">=</span> <span class="n">bcolz</span><span class="o">.</span><span class="n">carray</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">rootdir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'w'</span><span class="p">)</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">bcolz</span><span class="o">.</span><span class="n">carray</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">rootdir</span><span class="o">=</span><span class="n">labels_dir</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'w'</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_samples</span><span class="o">-</span><span class="mi">1</span><span class="p">)):</span>
+        <span class="n">d</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">gen</span><span class="o">.</span><span class="fm">__next__</span><span class="p">()</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+    <span class="n">labels</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+
+<span class="n">trn_data</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="s1">'bdat'</span><span class="p">,</span><span class="s1">'train'</span><span class="p">,</span><span class="s1">'data'</span><span class="p">)</span>
+<span class="n">trn_label</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="s1">'bdat'</span><span class="p">,</span><span class="s1">'train'</span><span class="p">,</span><span class="s1">'label'</span><span class="p">)</span>
+<span class="n">val_data</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="s1">'bdat'</span><span class="p">,</span><span class="s1">'valid'</span><span class="p">,</span><span class="s1">'data'</span><span class="p">)</span>
+<span class="n">val_label</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="s1">'bdat'</span><span class="p">,</span><span class="s1">'valid'</span><span class="p">,</span><span class="s1">'label'</span><span class="p">)</span>
+<span class="n">samp_data</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="s1">'bdat'</span><span class="p">,</span><span class="s1">'sample'</span><span class="p">,</span><span class="s1">'data'</span><span class="p">)</span>
+<span class="n">samp_label</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="s1">'bdat'</span><span class="p">,</span><span class="s1">'sample'</span><span class="p">,</span><span class="s1">'label'</span><span class="p">)</span>
+
+<span class="c1">#save_generator(train_gen, trn_data, trn_label)</span>
+<span class="c1">#save_generator(valid_gen, val_data, val_label)</span>
+<span class="c1">#save_generator(sample_gen, samp_data, samp_label)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">bcolz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">trn_data</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">bcolz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">trn_label</span><span class="p">)</span>
+<span class="n">val_data</span> <span class="o">=</span> <span class="n">bcolz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">val_data</span><span class="p">)</span>
+<span class="n">val_labels</span> <span class="o">=</span> <span class="n">bcolz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">val_label</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">boxes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>['alb_labels.json',
+ 'bet_labels.json',
+ 'dol_labels.json',
+ 'lag_labels.json',
+ 'NoF_labels.json',
+ 'other_labels.json',
+ 'shark_labels.json']</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'[a-zA-Z]*'</span><span class="p">,</span> <span class="n">boxes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>['alb', '', 'labels', '', 'json', '']</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To convert the coordinates to our resized size we will need to know the original image size.</p>
+<p>Note: If you are running windows you will want to split on '\' instead of '/'</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_sizes</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">'</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span><span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">'train'</span><span class="p">,</span><span class="n">f</span><span class="p">))</span><span class="o">.</span><span class="n">size</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">train_gen</span><span class="o">.</span><span class="n">filenames</span><span class="p">}</span>
+<span class="n">valid_sizes</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">'</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span><span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">'valid'</span><span class="p">,</span><span class="n">f</span><span class="p">))</span><span class="o">.</span><span class="n">size</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">valid_gen</span><span class="o">.</span><span class="n">filenames</span><span class="p">}</span>
+<span class="n">sample_sizes</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">'</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span><span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">'sample'</span><span class="p">,</span><span class="n">f</span><span class="p">))</span><span class="o">.</span><span class="n">size</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">sample_gen</span><span class="o">.</span><span class="n">filenames</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [25]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_sizes</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="p">[</span><span class="n">all_sizes</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">[</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">valid_sizes</span><span class="p">,</span> <span class="n">sample_sizes</span><span class="p">]]</span>
+<span class="n">all_sizes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt output_prompt">Out[25]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>{'img_03675.jpg': (1280, 974),
+ 'img_02591.jpg': (1280, 750),
+ 'img_05880.jpg': (1276, 718),
+ 'img_05281.jpg': (1280, 720),
+ 'img_05758.jpg': (1192, 670),
+ 'img_06724.jpg': (1280, 974),
+ 'img_01942.jpg': (1280, 720),
+ 'img_04093.jpg': (1280, 720),
+ 'img_02910.jpg': (1280, 750),
+ 'img_03081.jpg': (1280, 720),
+ 'img_05762.jpg': (1280, 974),
+ 'img_06048.jpg': (1280, 720),
+ 'img_06284.jpg': (1280, 750),
+ 'img_01757.jpg': (1280, 720),
+ 'img_04158.jpg': (1280, 974),
+ 'img_00143.jpg': (1280, 720),
+ 'img_06112.jpg': (1280, 750),
+ 'img_05065.jpg': (1280, 720),
+ 'img_01660.jpg': (1192, 670),
+ 'img_01000.jpg': (1280, 720),
+ 'img_00756.jpg': (1280, 720),
+ 'img_02758.jpg': (1280, 720),
+ 'img_00866.jpg': (1280, 720),
+ 'img_04693.jpg': (1280, 720),
+ 'img_01246.jpg': (1280, 720),
+ 'img_02875.jpg': (1192, 670),
+ 'img_07239.jpg': (1280, 720),
+ 'img_05511.jpg': (1276, 718),
+ 'img_00191.jpg': (1280, 720),
+ 'img_02348.jpg': (1280, 720),
+ 'img_04644.jpg': (1280, 750),
+ 'img_07227.jpg': (1280, 720),
+ 'img_02468.jpg': (1192, 670),
+ 'img_07712.jpg': (1280, 720),
+ 'img_07608.jpg': (1280, 750),
+ 'img_07545.jpg': (1280, 750),
+ 'img_06116.jpg': (1518, 854),
+ 'img_01934.jpg': (1280, 720),
+ 'img_02418.jpg': (1276, 718),
+ 'img_07435.jpg': (1280, 720),
+ 'img_07114.jpg': (1280, 720),
+ 'img_03710.jpg': (1280, 720),
+ 'img_02138.jpg': (1280, 720),
+ 'img_00911.jpg': (1280, 720),
+ 'img_04633.jpg': (1280, 720),
+ 'img_00788.jpg': (1280, 720),
+ 'img_05827.jpg': (1280, 720),
+ 'img_01464.jpg': (1280, 720),
+ 'img_01307.jpg': (1280, 974),
+ 'img_07077.jpg': (1280, 720),
+ 'img_02431.jpg': (1280, 720),
+ 'img_00531.jpg': (1280, 974),
+ 'img_06826.jpg': (1280, 720),
+ 'img_02689.jpg': (1280, 750),
+ 'img_00348.jpg': (1280, 750),
+ 'img_07240.jpg': (1280, 720),
+ 'img_02491.jpg': (1280, 720),
+ 'img_06578.jpg': (1280, 720),
+ 'img_00624.jpg': (1280, 720),
+ 'img_03505.jpg': (1280, 750),
+ 'img_01400.jpg': (1280, 720),
+ 'img_05886.jpg': (1280, 750),
+ 'img_07557.jpg': (1280, 720),
+ 'img_07649.jpg': (1280, 720),
+ 'img_01973.jpg': (1280, 720),
+ 'img_04463.jpg': (1280, 720),
+ 'img_01772.jpg': (1280, 720),
+ 'img_05535.jpg': (1280, 720),
+ 'img_01833.jpg': (1280, 720),
+ 'img_06152.jpg': (1280, 974),
+ 'img_01241.jpg': (1280, 750),
+ 'img_02737.jpg': (1280, 750),
+ 'img_01558.jpg': (1280, 720),
+ 'img_00831.jpg': (1280, 720),
+ 'img_05315.jpg': (1280, 750),
+ 'img_04336.jpg': (1280, 720),
+ 'img_07221.jpg': (1280, 720),
+ 'img_07275.jpg': (1280, 720),
+ 'img_01817.jpg': (1280, 720),
+ 'img_03022.jpg': (1280, 720),
+ 'img_04542.jpg': (1280, 750),
+ 'img_03453.jpg': (1280, 720),
+ 'img_07710.jpg': (1280, 720),
+ 'img_05112.jpg': (1280, 720),
+ 'img_01993.jpg': (1280, 720),
+ 'img_02128.jpg': (1280, 720),
+ 'img_06307.jpg': (1280, 750),
+ 'img_01916.jpg': (1280, 750),
+ 'img_01201.jpg': (1280, 720),
+ 'img_01654.jpg': (1280, 720),
+ 'img_00038.jpg': (1280, 720),
+ 'img_02283.jpg': (1280, 720),
+ 'img_07728.jpg': (1280, 974),
+ 'img_06063.jpg': (1280, 720),
+ 'img_03244.jpg': (1280, 720),
+ 'img_07365.jpg': (1280, 720),
+ 'img_01497.jpg': (1280, 720),
+ 'img_00558.jpg': (1280, 720),
+ 'img_05902.jpg': (1192, 670),
+ 'img_07429.jpg': (1280, 974),
+ 'img_06092.jpg': (1280, 720),
+ 'img_04806.jpg': (1280, 750),
+ 'img_06960.jpg': (1280, 720),
+ 'img_06714.jpg': (1280, 720),
+ 'img_05557.jpg': (1280, 720),
+ 'img_00165.jpg': (1280, 720),
+ 'img_03535.jpg': (1280, 720),
+ 'img_01422.jpg': (1280, 720),
+ 'img_04352.jpg': (1280, 720),
+ 'img_02034.jpg': (1276, 718),
+ 'img_05097.jpg': (1280, 720),
+ 'img_03997.jpg': (1280, 720),
+ 'img_01335.jpg': (1280, 974),
+ 'img_03480.jpg': (1280, 720),
+ 'img_02825.jpg': (1280, 720),
+ 'img_02301.jpg': (1280, 750),
+ 'img_01276.jpg': (1280, 720),
+ 'img_00725.jpg': (1280, 720),
+ 'img_01086.jpg': (1280, 720),
+ 'img_00352.jpg': (1280, 974),
+ 'img_01135.jpg': (1280, 720),
+ 'img_01160.jpg': (1280, 720),
+ 'img_01514.jpg': (1192, 670),
+ 'img_04756.jpg': (1280, 974),
+ 'img_02386.jpg': (1192, 670),
+ 'img_03246.jpg': (1280, 720),
+ 'img_04875.jpg': (1280, 720),
+ 'img_03278.jpg': (1280, 720),
+ 'img_07850.jpg': (1280, 720),
+ 'img_02364.jpg': (1244, 700),
+ 'img_05716.jpg': (1280, 750),
+ 'img_03025.jpg': (1280, 720),
+ 'img_07287.jpg': (1280, 974),
+ 'img_01333.jpg': (1280, 750),
+ 'img_01560.jpg': (1280, 720),
+ 'img_04873.jpg': (1280, 720),
+ 'img_00337.jpg': (1280, 720),
+ 'img_05783.jpg': (1280, 720),
+ 'img_07204.jpg': (1280, 720),
+ 'img_02324.jpg': (1280, 750),
+ 'img_02595.jpg': (1280, 720),
+ 'img_06672.jpg': (1280, 974),
+ 'img_01163.jpg': (1280, 750),
+ 'img_06591.jpg': (1280, 750),
+ 'img_01264.jpg': (1280, 720),
+ 'img_02053.jpg': (1280, 720),
+ 'img_01835.jpg': (1280, 974),
+ 'img_00881.jpg': (1276, 718),
+ 'img_04009.jpg': (1280, 720),
+ 'img_06821.jpg': (1280, 720),
+ 'img_07134.jpg': (1280, 750),
+ 'img_07168.jpg': (1280, 720),
+ 'img_01628.jpg': (1280, 974),
+ 'img_06719.jpg': (1280, 720),
+ 'img_06386.jpg': (1280, 720),
+ 'img_00055.jpg': (1280, 750),
+ 'img_00261.jpg': (1280, 720),
+ 'img_07530.jpg': (1280, 720),
+ 'img_07729.jpg': (1280, 720),
+ 'img_04229.jpg': (1280, 750),
+ 'img_03917.jpg': (1280, 720),
+ 'img_06656.jpg': (1280, 750),
+ 'img_02463.jpg': (1280, 720),
+ 'img_04967.jpg': (1280, 720),
+ 'img_05190.jpg': (1276, 718),
+ 'img_01806.jpg': (1280, 720),
+ 'img_03938.jpg': (1280, 750),
+ 'img_02530.jpg': (1280, 720),
+ 'img_07633.jpg': (1280, 974),
+ 'img_07518.jpg': (1280, 974),
+ 'img_07847.jpg': (1192, 670),
+ 'img_03979.jpg': (1280, 720),
+ 'img_03560.jpg': (1280, 720),
+ 'img_04231.jpg': (1280, 720),
+ 'img_05550.jpg': (1280, 750),
+ 'img_07397.jpg': (1280, 720),
+ 'img_02151.jpg': (1276, 718),
+ 'img_06443.jpg': (1280, 750),
+ 'img_05680.jpg': (1280, 720),
+ 'img_03374.jpg': (1280, 720),
+ 'img_07775.jpg': (1280, 720),
+ 'img_07017.jpg': (1280, 750),
+ 'img_07252.jpg': (1280, 750),
+ 'img_04052.jpg': (1518, 854),
+ 'img_05745.jpg': (1280, 720),
+ 'img_00391.jpg': (1280, 974),
+ 'img_07282.jpg': (1280, 720),
+ 'img_00696.jpg': (1280, 750),
+ 'img_04022.jpg': (1280, 720),
+ 'img_05022.jpg': (1280, 720),
+ 'img_03787.jpg': (1280, 974),
+ 'img_00295.jpg': (1280, 750),
+ 'img_02534.jpg': (1280, 750),
+ 'img_01820.jpg': (1280, 720),
+ 'img_01485.jpg': (1280, 720),
+ 'img_01143.jpg': (1280, 720),
+ 'img_02562.jpg': (1280, 720),
+ 'img_00237.jpg': (1192, 670),
+ 'img_02710.jpg': (1280, 720),
+ 'img_03585.jpg': (1280, 750),
+ 'img_02505.jpg': (1280, 974),
+ 'img_00321.jpg': (1280, 974),
+ 'img_04779.jpg': (1280, 720),
+ 'img_03154.jpg': (1280, 720),
+ 'img_05494.jpg': (1280, 720),
+ 'img_06996.jpg': (1732, 974),
+ 'img_01482.jpg': (1280, 720),
+ 'img_02745.jpg': (1280, 720),
+ 'img_04501.jpg': (1244, 700),
+ 'img_04154.jpg': (1280, 720),
+ 'img_01265.jpg': (1280, 720),
+ 'img_06069.jpg': (1280, 720),
+ 'img_05868.jpg': (1280, 750),
+ 'img_06323.jpg': (1244, 700),
+ 'img_05892.jpg': (1280, 720),
+ 'img_03714.jpg': (1280, 720),
+ 'img_02185.jpg': (1280, 720),
+ 'img_07109.jpg': (1280, 750),
+ 'img_00715.jpg': (1280, 720),
+ 'img_01064.jpg': (1280, 974),
+ 'img_03336.jpg': (1732, 974),
+ 'img_02018.jpg': (1280, 924),
+ 'img_02025.jpg': (1280, 720),
+ 'img_06532.jpg': (1280, 720),
+ 'img_05239.jpg': (1280, 720),
+ 'img_07197.jpg': (1280, 720),
+ 'img_07533.jpg': (1280, 720),
+ 'img_04854.jpg': (1280, 720),
+ 'img_01185.jpg': (1280, 720),
+ 'img_03918.jpg': (1280, 974),
+ 'img_07567.jpg': (1280, 750),
+ 'img_02112.jpg': (1192, 670),
+ 'img_06006.jpg': (1280, 974),
+ 'img_07544.jpg': (1244, 700),
+ 'img_03343.jpg': (1280, 750),
+ 'img_00678.jpg': (1280, 720),
+ 'img_02958.jpg': (1280, 750),
+ 'img_07228.jpg': (1192, 670),
+ 'img_01766.jpg': (1280, 720),
+ 'img_00299.jpg': (1280, 720),
+ 'img_05800.jpg': (1732, 974),
+ 'img_02399.jpg': (1280, 750),
+ 'img_06467.jpg': (1280, 720),
+ 'img_02633.jpg': (1280, 720),
+ 'img_07747.jpg': (1280, 924),
+ 'img_07898.jpg': (1280, 720),
+ 'img_03067.jpg': (1280, 720),
+ 'img_06523.jpg': (1280, 720),
+ 'img_07773.jpg': (1280, 750),
+ 'img_02113.jpg': (1276, 718),
+ 'img_01615.jpg': (1280, 974),
+ 'img_05973.jpg': (1280, 720),
+ 'img_06404.jpg': (1280, 974),
+ 'img_03253.jpg': (1280, 720),
+ 'img_07826.jpg': (1280, 750),
+ 'img_03893.jpg': (1280, 720),
+ 'img_00869.jpg': (1280, 720),
+ 'img_02635.jpg': (1280, 720),
+ 'img_01927.jpg': (1280, 720),
+ 'img_04605.jpg': (1732, 974),
+ 'img_05890.jpg': (1280, 720),
+ 'img_02997.jpg': (1732, 974),
+ 'img_06610.jpg': (1280, 720),
+ 'img_06847.jpg': (1280, 974),
+ 'img_04309.jpg': (1280, 720),
+ 'img_03051.jpg': (1280, 974),
+ 'img_07767.jpg': (1280, 720),
+ 'img_03817.jpg': (1280, 974),
+ 'img_01796.jpg': (1280, 720),
+ 'img_02433.jpg': (1276, 718),
+ 'img_06200.jpg': (1280, 750),
+ 'img_00848.jpg': (1280, 974),
+ 'img_02816.jpg': (1280, 750),
+ 'img_07268.jpg': (1280, 750),
+ 'img_00105.jpg': (1280, 720),
+ 'img_04880.jpg': (1280, 720),
+ 'img_02254.jpg': (1280, 720),
+ 'img_04678.jpg': (1280, 720),
+ 'img_06156.jpg': (1280, 720),
+ 'img_07547.jpg': (1280, 720),
+ 'img_06471.jpg': (1280, 720),
+ 'img_05645.jpg': (1280, 974),
+ 'img_01255.jpg': (1280, 720),
+ 'img_01841.jpg': (1280, 720),
+ 'img_01193.jpg': (1732, 974),
+ 'img_05375.jpg': (1280, 720),
+ 'img_02630.jpg': (1280, 720),
+ 'img_01763.jpg': (1280, 750),
+ 'img_06204.jpg': (1280, 720),
+ 'img_07390.jpg': (1280, 974),
+ 'img_05641.jpg': (1192, 670),
+ 'img_06057.jpg': (1276, 718),
+ 'img_00997.jpg': (1280, 750),
+ 'img_00819.jpg': (1280, 750),
+ 'img_07344.jpg': (1280, 974),
+ 'img_00278.jpg': (1280, 720),
+ 'img_06142.jpg': (1280, 720),
+ 'img_07749.jpg': (1280, 720),
+ 'img_01822.jpg': (1280, 720),
+ 'img_04090.jpg': (1280, 924),
+ 'img_01003.jpg': (1280, 974),
+ 'img_04471.jpg': (1192, 670),
+ 'img_00888.jpg': (1192, 670),
+ 'img_05689.jpg': (1280, 750),
+ 'img_03908.jpg': (1518, 854),
+ 'img_07223.jpg': (1280, 720),
+ 'img_02727.jpg': (1280, 720),
+ 'img_06134.jpg': (1280, 720),
+ 'img_04927.jpg': (1280, 974),
+ 'img_05490.jpg': (1280, 720),
+ 'img_02343.jpg': (1280, 974),
+ 'img_02017.jpg': (1280, 750),
+ 'img_05332.jpg': (1192, 670),
+ 'img_01677.jpg': (1732, 974),
+ 'img_06566.jpg': (1280, 720),
+ 'img_06421.jpg': (1280, 750),
+ 'img_04139.jpg': (1732, 974),
+ 'img_05553.jpg': (1280, 974),
+ 'img_05658.jpg': (1280, 974),
+ 'img_01291.jpg': (1280, 974),
+ 'img_00494.jpg': (1280, 720),
+ 'img_02940.jpg': (1280, 750),
+ 'img_02946.jpg': (1280, 720),
+ 'img_04249.jpg': (1280, 720),
+ 'img_05472.jpg': (1280, 720),
+ 'img_01233.jpg': (1280, 720),
+ 'img_04851.jpg': (1280, 720),
+ 'img_02698.jpg': (1280, 720),
+ 'img_02765.jpg': (1280, 720),
+ 'img_02976.jpg': (1280, 974),
+ 'img_04495.jpg': (1280, 720),
+ 'img_01165.jpg': (1334, 750),
+ 'img_01390.jpg': (1280, 720),
+ 'img_01011.jpg': (1280, 720),
+ 'img_00158.jpg': (1280, 720),
+ 'img_07558.jpg': (1280, 720),
+ 'img_01396.jpg': (1280, 720),
+ 'img_03713.jpg': (1280, 720),
+ 'img_05227.jpg': (1192, 670),
+ 'img_00481.jpg': (1192, 670),
+ 'img_01029.jpg': (1280, 720),
+ 'img_02446.jpg': (1280, 720),
+ 'img_05408.jpg': (1280, 720),
+ 'img_00014.jpg': (1280, 974),
+ 'img_02728.jpg': (1280, 720),
+ 'img_01578.jpg': (1280, 720),
+ 'img_04837.jpg': (1280, 974),
+ 'img_03451.jpg': (1280, 720),
+ 'img_00803.jpg': (1280, 974),
+ 'img_00546.jpg': (1276, 718),
+ 'img_04968.jpg': (1192, 670),
+ 'img_03842.jpg': (1280, 720),
+ 'img_01890.jpg': (1276, 718),
+ 'img_03356.jpg': (1280, 720),
+ 'img_06334.jpg': (1280, 974),
+ 'img_06493.jpg': (1280, 720),
+ 'img_01433.jpg': (1276, 718),
+ 'img_00406.jpg': (1732, 974),
+ 'img_06114.jpg': (1192, 670),
+ 'img_06338.jpg': (1280, 974),
+ 'img_07500.jpg': (1280, 720),
+ 'img_04578.jpg': (1280, 720),
+ 'img_00178.jpg': (1280, 720),
+ 'img_02341.jpg': (1280, 750),
+ 'img_01306.jpg': (1276, 718),
+ 'img_04524.jpg': (1280, 720),
+ 'img_04026.jpg': (1280, 720),
+ 'img_01601.jpg': (1280, 750),
+ 'img_01076.jpg': (1280, 974),
+ 'img_01721.jpg': (1280, 974),
+ 'img_02643.jpg': (1280, 720),
+ 'img_05094.jpg': (1280, 720),
+ 'img_02456.jpg': (1280, 720),
+ 'img_00397.jpg': (1280, 720),
+ 'img_04373.jpg': (1280, 974),
+ 'img_06503.jpg': (1280, 720),
+ 'img_04627.jpg': (1280, 750),
+ 'img_05373.jpg': (1280, 924),
+ 'img_04083.jpg': (1280, 974),
+ 'img_01603.jpg': (1280, 750),
+ 'img_02439.jpg': (1280, 720),
+ 'img_01087.jpg': (1280, 974),
+ 'img_03090.jpg': (1280, 720),
+ 'img_07923.jpg': (1280, 720),
+ 'img_06252.jpg': (1280, 720),
+ 'img_02186.jpg': (1280, 720),
+ 'img_07200.jpg': (1280, 720),
+ 'img_00984.jpg': (1280, 720),
+ 'img_00993.jpg': (1280, 750),
+ 'img_03984.jpg': (1280, 974),
+ 'img_04544.jpg': (1280, 720),
+ 'img_05116.jpg': (1280, 750),
+ 'img_04952.jpg': (1280, 720),
+ 'img_00197.jpg': (1280, 720),
+ 'img_00032.jpg': (1192, 670),
+ 'img_06260.jpg': (1280, 720),
+ 'img_00482.jpg': (1280, 720),
+ 'img_00545.jpg': (1280, 720),
+ 'img_01686.jpg': (1280, 720),
+ 'img_00998.jpg': (1280, 750),
+ 'img_01812.jpg': (1280, 720),
+ 'img_00653.jpg': (1280, 924),
+ 'img_04583.jpg': (1280, 720),
+ 'img_03755.jpg': (1280, 720),
+ 'img_03612.jpg': (1280, 720),
+ 'img_06537.jpg': (1280, 720),
+ 'img_06226.jpg': (1280, 974),
+ 'img_07657.jpg': (1280, 720),
+ 'img_05275.jpg': (1280, 720),
+ 'img_05592.jpg': (1280, 974),
+ 'img_02492.jpg': (1280, 750),
+ 'img_04289.jpg': (1280, 974),
+ 'img_06014.jpg': (1280, 720),
+ 'img_04150.jpg': (1280, 750),
+ 'img_05637.jpg': (1280, 924),
+ 'img_06695.jpg': (1280, 750),
+ 'img_02621.jpg': (1280, 750),
+ 'img_01744.jpg': (1276, 718),
+ 'img_06299.jpg': (1280, 974),
+ 'img_05560.jpg': (1280, 720),
+ 'img_05075.jpg': (1192, 670),
+ 'img_06589.jpg': (1276, 718),
+ 'img_02858.jpg': (1280, 720),
+ 'img_02377.jpg': (1280, 720),
+ 'img_06374.jpg': (1280, 750),
+ 'img_05480.jpg': (1280, 750),
+ 'img_03479.jpg': (1280, 720),
+ 'img_02499.jpg': (1280, 720),
+ 'img_05810.jpg': (1280, 720),
+ 'img_02605.jpg': (1280, 750),
+ 'img_02378.jpg': (1280, 750),
+ 'img_04041.jpg': (1280, 750),
+ 'img_00201.jpg': (1192, 670),
+ 'img_05249.jpg': (1280, 974),
+ 'img_00574.jpg': (1280, 720),
+ 'img_01707.jpg': (1280, 974),
+ 'img_06929.jpg': (1280, 720),
+ 'img_01455.jpg': (1280, 720),
+ 'img_06228.jpg': (1280, 720),
+ 'img_02981.jpg': (1280, 974),
+ 'img_02642.jpg': (1280, 974),
+ 'img_04032.jpg': (1280, 720),
+ 'img_03700.jpg': (1280, 720),
+ 'img_01093.jpg': (1280, 720),
+ 'img_07334.jpg': (1280, 720),
+ 'img_01083.jpg': (1280, 720),
+ 'img_00428.jpg': (1280, 720),
+ 'img_03544.jpg': (1280, 974),
+ 'img_02272.jpg': (1280, 720),
+ 'img_04848.jpg': (1192, 670),
+ 'img_05347.jpg': (1280, 720),
+ 'img_01767.jpg': (1280, 720),
+ 'img_03887.jpg': (1276, 718),
+ 'img_02201.jpg': (1280, 720),
+ 'img_06081.jpg': (1280, 720),
+ 'img_00713.jpg': (1280, 720),
+ 'img_01992.jpg': (1280, 750),
+ 'img_06428.jpg': (1280, 720),
+ 'img_03376.jpg': (1280, 720),
+ 'img_05310.jpg': (1280, 720),
+ 'img_06935.jpg': (1192, 670),
+ 'img_05676.jpg': (1280, 750),
+ 'img_00409.jpg': (1280, 720),
+ 'img_02033.jpg': (1280, 720),
+ 'img_02174.jpg': (1276, 718),
+ 'img_00903.jpg': (1280, 720),
+ 'img_07806.jpg': (1280, 720),
+ 'img_01411.jpg': (1334, 750),
+ 'img_05122.jpg': (1518, 854),
+ 'img_07911.jpg': (1280, 720),
+ 'img_06995.jpg': (1280, 750),
+ 'img_01021.jpg': (1280, 750),
+ 'img_02148.jpg': (1280, 720),
+ 'img_07170.jpg': (1280, 750),
+ 'img_02696.jpg': (1280, 974),
+ 'img_01520.jpg': (1280, 750),
+ 'img_07359.jpg': (1280, 720),
+ 'img_06464.jpg': (1280, 720),
+ 'img_00461.jpg': (1280, 720),
+ 'img_05143.jpg': (1280, 720),
+ 'img_07643.jpg': (1280, 720),
+ 'img_04283.jpg': (1280, 750),
+ 'img_00687.jpg': (1280, 720),
+ 'img_05507.jpg': (1280, 750),
+ 'img_07020.jpg': (1280, 750),
+ 'img_01466.jpg': (1276, 718),
+ 'img_00043.jpg': (1280, 720),
+ 'img_07265.jpg': (1280, 974),
+ 'img_03179.jpg': (1280, 720),
+ 'img_03774.jpg': (1280, 720),
+ 'img_02557.jpg': (1280, 750),
+ 'img_02828.jpg': (1280, 720),
+ 'img_00354.jpg': (1732, 974),
+ 'img_02198.jpg': (1280, 720),
+ 'img_00281.jpg': (1280, 720),
+ 'img_02199.jpg': (1280, 924),
+ 'img_05957.jpg': (1280, 750),
+ 'img_00815.jpg': (1280, 720),
+ 'img_07730.jpg': (1280, 750),
+ 'img_00284.jpg': (1280, 720),
+ 'img_04711.jpg': (1280, 720),
+ 'img_07018.jpg': (1280, 720),
+ 'img_03530.jpg': (1280, 720),
+ 'img_02760.jpg': (1280, 720),
+ 'img_00523.jpg': (1280, 720),
+ 'img_04899.jpg': (1280, 720),
+ 'img_00317.jpg': (1192, 670),
+ 'img_00821.jpg': (1280, 720),
+ 'img_07670.jpg': (1276, 718),
+ 'img_05070.jpg': (1280, 720),
+ 'img_03712.jpg': (1280, 720),
+ 'img_07871.jpg': (1280, 720),
+ 'img_00218.jpg': (1280, 720),
+ 'img_04444.jpg': (1280, 750),
+ 'img_02149.jpg': (1280, 750),
+ 'img_05711.jpg': (1280, 720),
+ 'img_07226.jpg': (1280, 720),
+ 'img_01783.jpg': (1280, 974),
+ 'img_00193.jpg': (1280, 750),
+ 'img_04235.jpg': (1280, 720),
+ 'img_05226.jpg': (1280, 720),
+ 'img_07864.jpg': (1280, 720),
+ 'img_00015.jpg': (1280, 750),
+ 'img_04441.jpg': (1280, 720),
+ 'img_05067.jpg': (1280, 720),
+ 'img_00774.jpg': (1280, 974),
+ 'img_02583.jpg': (1280, 720),
+ 'img_07687.jpg': (1280, 750),
+ 'img_07015.jpg': (1280, 974),
+ 'img_06636.jpg': (1280, 720),
+ 'img_06708.jpg': (1280, 720),
+ 'img_05243.jpg': (1280, 720),
+ 'img_02461.jpg': (1276, 718),
+ 'img_05685.jpg': (1280, 720),
+ 'img_07424.jpg': (1280, 720),
+ 'img_02448.jpg': (1280, 720),
+ 'img_07072.jpg': (1280, 720),
+ 'img_00535.jpg': (1280, 720),
+ 'img_02007.jpg': (1280, 974),
+ 'img_01668.jpg': (1192, 670),
+ 'img_03315.jpg': (1280, 750),
+ 'img_07222.jpg': (1280, 750),
+ 'img_00890.jpg': (1280, 924),
+ 'img_07560.jpg': (1280, 720),
+ 'img_07684.jpg': (1192, 670),
+ 'img_07118.jpg': (1280, 720),
+ 'img_03807.jpg': (1280, 720),
+ 'img_04217.jpg': (1280, 750),
+ 'img_03708.jpg': (1280, 720),
+ 'img_01008.jpg': (1280, 720),
+ 'img_04866.jpg': (1280, 750),
+ 'img_01810.jpg': (1280, 750),
+ 'img_05397.jpg': (1280, 720),
+ 'img_03884.jpg': (1280, 720),
+ 'img_03424.jpg': (1280, 720),
+ 'img_04736.jpg': (1280, 720),
+ 'img_06527.jpg': (1192, 670),
+ 'img_07437.jpg': (1280, 720),
+ 'img_05554.jpg': (1280, 720),
+ 'img_07761.jpg': (1280, 974),
+ 'img_01461.jpg': (1276, 718),
+ 'img_00891.jpg': (1280, 974),
+ 'img_04738.jpg': (1280, 720),
+ 'img_05114.jpg': (1280, 720),
+ 'img_07463.jpg': (1280, 720),
+ 'img_00592.jpg': (1276, 718),
+ 'img_07167.jpg': (1280, 720),
+ 'img_03596.jpg': (1280, 974),
+ 'img_03119.jpg': (1280, 720),
+ 'img_01044.jpg': (1280, 720),
+ 'img_03949.jpg': (1280, 750),
+ 'img_02938.jpg': (1280, 720),
+ 'img_07408.jpg': (1280, 750),
+ 'img_06445.jpg': (1280, 720),
+ 'img_07414.jpg': (1280, 750),
+ 'img_04948.jpg': (1280, 720),
+ 'img_06868.jpg': (1280, 720),
+ 'img_01823.jpg': (1276, 718),
+ 'img_02805.jpg': (1732, 974),
+ 'img_05041.jpg': (1280, 720),
+ 'img_05733.jpg': (1280, 720),
+ 'img_07693.jpg': (1280, 720),
+ 'img_03092.jpg': (1280, 720),
+ 'img_04163.jpg': (1280, 720),
+ 'img_03565.jpg': (1280, 720),
+ 'img_07648.jpg': (1280, 974),
+ 'img_07136.jpg': (1280, 750),
+ 'img_04391.jpg': (1280, 720),
+ 'img_03174.jpg': (1280, 720),
+ 'img_03257.jpg': (1280, 750),
+ 'img_07039.jpg': (1280, 720),
+ 'img_00387.jpg': (1280, 720),
+ 'img_02802.jpg': (1280, 720),
+ 'img_00041.jpg': (1280, 720),
+ 'img_01218.jpg': (1280, 720),
+ 'img_01052.jpg': (1280, 720),
+ 'img_01139.jpg': (1280, 750),
+ 'img_06298.jpg': (1280, 720),
+ 'img_02435.jpg': (1280, 720),
+ 'img_01402.jpg': (1280, 720),
+ 'img_02809.jpg': (1280, 974),
+ 'img_06619.jpg': (1280, 720),
+ 'img_06706.jpg': (1280, 720),
+ 'img_04914.jpg': (1244, 700),
+ 'img_03429.jpg': (1280, 720),
+ 'img_02250.jpg': (1280, 924),
+ 'img_05617.jpg': (1280, 720),
+ 'img_01768.jpg': (1280, 720),
+ 'img_04917.jpg': (1280, 720),
+ 'img_02115.jpg': (1518, 854),
+ 'img_03860.jpg': (1192, 670),
+ 'img_00011.jpg': (1280, 720),
+ 'img_04630.jpg': (1192, 670),
+ 'img_07075.jpg': (1280, 750),
+ 'img_05928.jpg': (1732, 974),
+ 'img_01886.jpg': (1280, 720),
+ 'img_00400.jpg': (1280, 720),
+ 'img_07274.jpg': (1244, 700),
+ 'img_00478.jpg': (1280, 720),
+ 'img_04708.jpg': (1280, 720),
+ 'img_06406.jpg': (1280, 720),
+ 'img_06792.jpg': (1280, 750),
+ 'img_00338.jpg': (1280, 720),
+ 'img_03599.jpg': (1280, 720),
+ 'img_06422.jpg': (1280, 750),
+ 'img_05283.jpg': (1280, 750),
+ 'img_04365.jpg': (1280, 720),
+ 'img_05532.jpg': (1280, 974),
+ 'img_03833.jpg': (1280, 974),
+ 'img_00471.jpg': (1276, 718),
+ 'img_02886.jpg': (1280, 750),
+ 'img_02768.jpg': (1280, 720),
+ 'img_00840.jpg': (1276, 718),
+ 'img_03383.jpg': (1280, 720),
+ 'img_01243.jpg': (1280, 720),
+ 'img_01620.jpg': (1280, 720),
+ 'img_00021.jpg': (1280, 720),
+ 'img_02105.jpg': (1280, 720),
+ 'img_07081.jpg': (1192, 670),
+ 'img_03158.jpg': (1280, 720),
+ 'img_07857.jpg': (1280, 720),
+ 'img_00490.jpg': (1280, 720),
+ 'img_03048.jpg': (1280, 720),
+ 'img_02340.jpg': (1280, 750),
+ 'img_00184.jpg': (1280, 750),
+ 'img_00744.jpg': (1280, 720),
+ 'img_07285.jpg': (1192, 670),
+ 'img_04008.jpg': (1280, 720),
+ 'img_01855.jpg': (1280, 720),
+ 'img_00595.jpg': (1276, 718),
+ 'img_01071.jpg': (1280, 720),
+ 'img_04977.jpg': (1280, 750),
+ 'img_03549.jpg': (1280, 720),
+ 'img_05350.jpg': (1192, 670),
+ 'img_06827.jpg': (1280, 720),
+ 'img_05353.jpg': (1280, 720),
+ 'img_02558.jpg': (1280, 974),
+ 'img_03185.jpg': (1280, 974),
+ 'img_04486.jpg': (1280, 750),
+ 'img_00209.jpg': (1280, 720),
+ 'img_02680.jpg': (1280, 974),
+ 'img_06313.jpg': (1280, 720),
+ 'img_01343.jpg': (1280, 974),
+ 'img_02494.jpg': (1280, 720),
+ 'img_04793.jpg': (1280, 720),
+ 'img_00769.jpg': (1280, 974),
+ 'img_02744.jpg': (1280, 720),
+ 'img_01826.jpg': (1276, 718),
+ 'img_05158.jpg': (1280, 720),
+ 'img_00510.jpg': (1280, 974),
+ 'img_01271.jpg': (1280, 750),
+ 'img_02376.jpg': (1192, 670),
+ 'img_02897.jpg': (1280, 750),
+ 'img_05101.jpg': (1192, 670),
+ 'img_00023.jpg': (1280, 720),
+ 'img_05481.jpg': (1280, 720),
+ 'img_06360.jpg': (1280, 720),
+ 'img_02784.jpg': (1280, 720),
+ 'img_05694.jpg': (1280, 750),
+ 'img_04475.jpg': (1280, 750),
+ 'img_06686.jpg': (1280, 720),
+ 'img_02863.jpg': (1280, 720),
+ 'img_02592.jpg': (1280, 750),
+ 'img_02776.jpg': (1280, 720),
+ 'img_05818.jpg': (1276, 718),
+ 'img_06303.jpg': (1280, 974),
+ 'img_03131.jpg': (1280, 720),
+ 'img_07673.jpg': (1280, 720),
+ 'img_03607.jpg': (1280, 924),
+ 'img_01678.jpg': (1280, 720),
+ 'img_02008.jpg': (1280, 720),
+ 'img_01749.jpg': (1280, 750),
+ 'img_05855.jpg': (1280, 720),
+ 'img_00677.jpg': (1280, 750),
+ 'img_06567.jpg': (1280, 750),
+ 'img_05765.jpg': (1280, 720),
+ 'img_05625.jpg': (1276, 718),
+ 'img_05503.jpg': (1280, 720),
+ 'img_00368.jpg': (1280, 720),
+ 'img_05345.jpg': (1280, 720),
+ 'img_05163.jpg': (1280, 720),
+ 'img_06903.jpg': (1280, 720),
+ 'img_03183.jpg': (1280, 720),
+ 'img_01634.jpg': (1280, 720),
+ 'img_01311.jpg': (1280, 720),
+ 'img_02014.jpg': (1280, 720),
+ 'img_04188.jpg': (1280, 750),
+ 'img_02919.jpg': (1280, 720),
+ 'img_02260.jpg': (1280, 750),
+ 'img_07698.jpg': (1280, 720),
+ 'img_04950.jpg': (1280, 720),
+ 'img_05604.jpg': (1280, 750),
+ 'img_01699.jpg': (1280, 720),
+ 'img_00536.jpg': (1280, 750),
+ 'img_01118.jpg': (1276, 718),
+ 'img_03636.jpg': (1280, 720),
+ 'img_03540.jpg': (1280, 720),
+ 'img_03779.jpg': (1280, 720),
+ 'img_04567.jpg': (1280, 720),
+ 'img_07439.jpg': (1280, 720),
+ 'img_06707.jpg': (1280, 720),
+ 'img_01001.jpg': (1192, 670),
+ 'img_05133.jpg': (1280, 720),
+ 'img_03791.jpg': (1280, 720),
+ 'img_01323.jpg': (1280, 750),
+ 'img_06497.jpg': (1280, 720),
+ 'img_04513.jpg': (1280, 750),
+ 'img_03567.jpg': (1280, 974),
+ 'img_07886.jpg': (1280, 720),
+ 'img_00690.jpg': (1280, 750),
+ 'img_06818.jpg': (1280, 720),
+ 'img_06742.jpg': (1280, 750),
+ 'img_00781.jpg': (1280, 720),
+ 'img_02996.jpg': (1280, 974),
+ 'img_07701.jpg': (1280, 720),
+ 'img_01356.jpg': (1280, 720),
+ 'img_01398.jpg': (1280, 750),
+ 'img_07554.jpg': (1192, 670),
+ 'img_00097.jpg': (1280, 720),
+ 'img_01469.jpg': (1280, 720),
+ 'img_01941.jpg': (1280, 924),
+ 'img_07577.jpg': (1280, 720),
+ 'img_04124.jpg': (1280, 720),
+ 'img_03189.jpg': (1280, 974),
+ 'img_04911.jpg': (1280, 720),
+ 'img_02721.jpg': (1280, 720),
+ 'img_05618.jpg': (1280, 720),
+ 'img_06613.jpg': (1244, 700),
+ 'img_02107.jpg': (1280, 720),
+ 'img_04087.jpg': (1280, 720),
+ 'img_05237.jpg': (1280, 750),
+ 'img_06843.jpg': (1280, 720),
+ 'img_03509.jpg': (1280, 974),
+ 'img_03020.jpg': (1280, 720),
+ 'img_05024.jpg': (1280, 750),
+ 'img_01769.jpg': (1280, 974),
+ 'img_05971.jpg': (1280, 720),
+ 'img_06239.jpg': (1280, 720),
+ 'img_07115.jpg': (1244, 700),
+ 'img_06771.jpg': (1280, 750),
+ 'img_01375.jpg': (1280, 750),
+ 'img_07447.jpg': (1280, 720),
+ 'img_07732.jpg': (1192, 670),
+ 'img_02365.jpg': (1280, 720),
+ 'img_03880.jpg': (1280, 750),
+ 'img_01865.jpg': (1280, 750),
+ 'img_07883.jpg': (1280, 720),
+ 'img_06022.jpg': (1280, 720),
+ 'img_05088.jpg': (1280, 750),
+ 'img_05048.jpg': (1280, 974),
+ 'img_06777.jpg': (1280, 750),
+ 'img_03742.jpg': (1280, 750),
+ 'img_05089.jpg': (1280, 720),
+ 'img_05466.jpg': (1280, 720),
+ 'img_03300.jpg': (1280, 720),
+ 'img_07059.jpg': (1192, 670),
+ 'img_04721.jpg': (1280, 720),
+ 'img_06126.jpg': (1280, 720),
+ 'img_01194.jpg': (1280, 720),
+ 'img_05029.jpg': (1280, 720),
+ 'img_03035.jpg': (1280, 720),
+ 'img_00286.jpg': (1280, 720),
+ 'img_05575.jpg': (1280, 720),
+ 'img_02798.jpg': (1280, 974),
+ 'img_01912.jpg': (1280, 720),
+ 'img_03841.jpg': (1280, 720),
+ 'img_07727.jpg': (1280, 720),
+ 'img_00771.jpg': (1192, 670),
+ 'img_05228.jpg': (1280, 720),
+ 'img_03730.jpg': (1276, 718),
+ 'img_01304.jpg': (1280, 720),
+ 'img_06772.jpg': (1518, 854),
+ 'img_06568.jpg': (1280, 720),
+ 'img_00206.jpg': (1192, 670),
+ 'img_07671.jpg': (1280, 720),
+ 'img_05485.jpg': (1280, 720),
+ 'img_06884.jpg': (1280, 750),
+ 'img_00069.jpg': (1280, 974),
+ 'img_06344.jpg': (1192, 670),
+ 'img_06383.jpg': (1280, 720),
+ 'img_06072.jpg': (1280, 974),
+ 'img_07046.jpg': (1280, 750),
+ 'img_03643.jpg': (1334, 750),
+ 'img_06244.jpg': (1280, 720),
+ 'img_03065.jpg': (1280, 720),
+ 'img_03654.jpg': (1280, 720),
+ 'img_00820.jpg': (1280, 720),
+ 'img_05635.jpg': (1280, 720),
+ 'img_02915.jpg': (1280, 720),
+ 'img_02013.jpg': (1334, 750),
+ 'img_00703.jpg': (1280, 720),
+ 'img_04681.jpg': (1280, 974),
+ 'img_02469.jpg': (1280, 720),
+ 'img_01040.jpg': (1280, 720),
+ 'img_07916.jpg': (1280, 720),
+ 'img_06495.jpg': (1334, 750),
+ 'img_03947.jpg': (1280, 750),
+ 'img_02541.jpg': (1280, 720),
+ 'img_01080.jpg': (1280, 720),
+ 'img_05873.jpg': (1280, 720),
+ 'img_04547.jpg': (1280, 750),
+ 'img_00084.jpg': (1276, 718),
+ 'img_02801.jpg': (1280, 720),
+ 'img_02695.jpg': (1280, 720),
+ 'img_07286.jpg': (1280, 720),
+ 'img_00435.jpg': (1280, 720),
+ 'img_04878.jpg': (1280, 750),
+ 'img_01664.jpg': (1280, 720),
+ 'img_04545.jpg': (1192, 670),
+ 'img_07785.jpg': (1244, 700),
+ 'img_03489.jpg': (1280, 750),
+ 'img_06879.jpg': (1280, 720),
+ 'img_00247.jpg': (1280, 750),
+ 'img_07774.jpg': (1280, 720),
+ 'img_00245.jpg': (1280, 974),
+ 'img_06434.jpg': (1280, 974),
+ 'img_06487.jpg': (1280, 750),
+ 'img_02658.jpg': (1280, 720),
+ 'img_05106.jpg': (1280, 720),
+ 'img_06215.jpg': (1280, 750),
+ 'img_03477.jpg': (1280, 720),
+ 'img_03543.jpg': (1280, 720),
+ 'img_00300.jpg': (1276, 718),
+ 'img_04592.jpg': (1280, 720),
+ 'img_04259.jpg': (1280, 750),
+ 'img_07709.jpg': (1280, 750),
+ 'img_00372.jpg': (1280, 720),
+ 'img_04350.jpg': (1280, 720),
+ 'img_02718.jpg': (1280, 720),
+ 'img_03972.jpg': (1276, 718),
+ 'img_01111.jpg': (1280, 720),
+ 'img_07258.jpg': (1334, 750),
+ 'img_01784.jpg': (1280, 750),
+ 'img_02926.jpg': (1280, 720),
+ 'img_02867.jpg': (1280, 720),
+ 'img_03123.jpg': (1192, 670),
+ 'img_00008.jpg': (1280, 720),
+ 'img_00222.jpg': (1280, 720),
+ 'img_00356.jpg': (1280, 720),
+ 'img_05040.jpg': (1280, 720),
+ 'img_06094.jpg': (1280, 750),
+ 'img_01151.jpg': (1280, 720),
+ 'img_04316.jpg': (1280, 974),
+ 'img_06652.jpg': (1280, 720),
+ 'img_02918.jpg': (1280, 720),
+ 'img_04568.jpg': (1280, 974),
+ 'img_00507.jpg': (1280, 720),
+ 'img_00898.jpg': (1280, 720),
+ 'img_00926.jpg': (1276, 718),
+ 'img_01507.jpg': (1280, 720),
+ 'img_04983.jpg': (1276, 718),
+ 'img_03623.jpg': (1192, 670),
+ 'img_01429.jpg': (1280, 974),
+ 'img_03215.jpg': (1192, 670),
+ 'img_01403.jpg': (1280, 720),
+ 'img_01902.jpg': (1280, 720),
+ 'img_03186.jpg': (1280, 720),
+ 'img_06220.jpg': (1280, 974),
+ 'img_06627.jpg': (1280, 720),
+ 'img_07048.jpg': (1280, 720),
+ 'img_04366.jpg': (1280, 720),
+ 'img_04196.jpg': (1280, 720),
+ 'img_04632.jpg': (1280, 974),
+ 'img_01959.jpg': (1276, 718),
+ 'img_03296.jpg': (1280, 720),
+ 'img_02457.jpg': (1280, 720),
+ 'img_03699.jpg': (1280, 720),
+ 'img_04148.jpg': (1280, 720),
+ 'img_07443.jpg': (1192, 670),
+ 'img_02719.jpg': (1280, 720),
+ 'img_02432.jpg': (1280, 974),
+ 'img_06277.jpg': (1280, 974),
+ 'img_02410.jpg': (1280, 720),
+ 'img_07869.jpg': (1276, 718),
+ 'img_05852.jpg': (1280, 720),
+ 'img_01128.jpg': (1280, 720),
+ 'img_05012.jpg': (1280, 720),
+ 'img_07133.jpg': (1280, 720),
+ 'img_02308.jpg': (1280, 750),
+ 'img_07031.jpg': (1280, 924),
+ 'img_05069.jpg': (1280, 720),
+ 'img_01056.jpg': (1192, 670),
+ 'img_02051.jpg': (1280, 720),
+ 'img_04050.jpg': (1280, 720),
+ 'img_00187.jpg': (1280, 750),
+ 'img_00091.jpg': (1280, 720),
+ 'img_07892.jpg': (1280, 720),
+ 'img_00219.jpg': (1280, 974),
+ 'img_02220.jpg': (1280, 750),
+ 'img_07576.jpg': (1280, 720),
+ 'img_05252.jpg': (1280, 974),
+ 'img_00630.jpg': (1280, 720),
+ 'img_07797.jpg': (1280, 720),
+ 'img_06347.jpg': (1280, 750),
+ 'img_01588.jpg': (1276, 718),
+ 'img_05648.jpg': (1192, 670),
+ 'img_06061.jpg': (1280, 720),
+ 'img_05066.jpg': (1276, 718),
+ 'img_00539.jpg': (1280, 974),
+ 'img_00022.jpg': (1280, 720),
+ 'img_05382.jpg': (1280, 750),
+ 'img_05446.jpg': (1280, 974),
+ 'img_03963.jpg': (1280, 720),
+ 'img_06553.jpg': (1280, 720),
+ 'img_01790.jpg': (1280, 720),
+ 'img_00359.jpg': (1280, 720),
+ 'img_01527.jpg': (1280, 720),
+ 'img_06407.jpg': (1280, 720),
+ 'img_01492.jpg': (1280, 720),
+ 'img_07665.jpg': (1280, 720),
+ 'img_07276.jpg': (1280, 720),
+ 'img_02084.jpg': (1280, 720),
+ 'img_00288.jpg': (1280, 720),
+ 'img_02604.jpg': (1280, 750),
+ 'img_02360.jpg': (1280, 720),
+ 'img_00072.jpg': (1280, 720),
+ 'img_05926.jpg': (1280, 720),
+ 'img_07770.jpg': (1280, 720),
+ 'img_05057.jpg': (1280, 750),
+ 'img_00818.jpg': (1276, 718),
+ 'img_00502.jpg': (1280, 720),
+ 'img_04621.jpg': (1280, 720),
+ 'img_00747.jpg': (1280, 924),
+ 'img_03150.jpg': (1280, 720),
+ 'img_04458.jpg': (1280, 750),
+ 'img_03241.jpg': (1280, 720),
+ 'img_02785.jpg': (1276, 718),
+ 'img_05482.jpg': (1280, 720),
+ 'img_03507.jpg': (1280, 750),
+ 'img_00365.jpg': (1280, 974),
+ 'img_00601.jpg': (1280, 974),
+ 'img_07396.jpg': (1280, 750),
+ 'img_02427.jpg': (1280, 974),
+ 'img_01866.jpg': (1280, 720),
+ 'img_01753.jpg': (1280, 720),
+ 'img_00783.jpg': (1280, 974),
+ 'img_07801.jpg': (1280, 720),
+ 'img_00360.jpg': (1280, 750),
+ 'img_04762.jpg': (1280, 720),
+ 'img_01779.jpg': (1280, 720),
+ 'img_05681.jpg': (1192, 670),
+ 'img_04680.jpg': (1280, 720),
+ 'img_01006.jpg': (1280, 750),
+ 'img_02173.jpg': (1280, 750),
+ 'img_00437.jpg': (1280, 720),
+ 'img_03649.jpg': (1280, 720),
+ 'img_00596.jpg': (1280, 720),
+ 'img_07472.jpg': (1280, 720),
+ 'img_07537.jpg': (1280, 924),
+ 'img_02362.jpg': (1280, 750),
+ 'img_00843.jpg': (1280, 720),
+ 'img_01980.jpg': (1280, 720),
+ 'img_04617.jpg': (1280, 720),
+ 'img_04236.jpg': (1280, 750),
+ 'img_02393.jpg': (1280, 720),
+ 'img_05728.jpg': (1280, 974),
+ 'img_05152.jpg': (1280, 720),
+ 'img_02937.jpg': (1280, 974),
+ 'img_02685.jpg': (1280, 720),
+ 'img_03686.jpg': (1280, 750),
+ 'img_03645.jpg': (1280, 720),
+ 'img_05778.jpg': (1280, 720),
+ 'img_03347.jpg': (1280, 974),
+ 'img_06090.jpg': (1280, 720),
+ 'img_05384.jpg': (1280, 720),
+ 'img_07810.jpg': (1280, 720),
+ 'img_05358.jpg': (1280, 720),
+ 'img_01446.jpg': (1280, 720),
+ 'img_01516.jpg': (1280, 720),
+ 'img_00130.jpg': (1280, 750),
+ 'img_06420.jpg': (1280, 720),
+ 'img_00085.jpg': (1280, 720),
+ 'img_00762.jpg': (1280, 750),
+ 'img_03948.jpg': (1280, 974),
+ 'img_01415.jpg': (1280, 720),
+ 'img_07503.jpg': (1280, 720),
+ 'img_06096.jpg': (1280, 720),
+ 'img_06105.jpg': (1280, 720),
+ 'img_06417.jpg': (1280, 750),
+ 'img_01448.jpg': (1280, 720),
+ ...}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="s1">'./data/boxes/'</span><span class="p">,</span> <span class="n">boxes</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">bxs</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">bxs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">bxs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'annotations'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'filename': 'img_07917.jpg', 'annotations': [{'y': 193.3597426816281, 'width': 383.68430384213445, 'height': 151.06975503141317, 'x': 547.1578480789353, 'class': 'rect'}], 'class': 'image'}
+[{'y': 193.3597426816281, 'width': 383.68430384213445, 'height': 151.06975503141317, 'x': 547.1578480789353, 'class': 'rect'}]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So the annotations appear to be a list, the key parameter is the 'filename' parameter. We will also need to transform the coords as we have resized all of the images.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A simple function to transform the coordinates of the bounding boxes.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [27]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convert_bb</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">new_size</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span><span class="mi">224</span><span class="p">)):</span>
+    <span class="n">factor_x</span> <span class="o">=</span> <span class="n">new_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">factor_y</span> <span class="o">=</span> <span class="n">new_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">item</span><span class="p">[</span><span class="s1">'height'</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s1">'height'</span><span class="p">]</span><span class="o">*</span><span class="n">factor_y</span>
+    <span class="n">item</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span><span class="o">*</span><span class="n">factor_x</span>
+    <span class="n">item</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span><span class="o">*</span><span class="n">factor_x</span>
+    <span class="n">item</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span><span class="o">*</span><span class="n">factor_y</span>
+    <span class="k">return</span> <span class="n">item</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we construct a dictionary whose keys are the filenames. The idea is we can use the filenames to find out the box meta-data.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [28]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">null_largest</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'width'</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+               <span class="s1">'height'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> 
+               <span class="s1">'x'</span><span class="p">:</span> <span class="mi">224</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> 
+               <span class="s1">'y'</span><span class="p">:</span> <span class="mi">224</span><span class="o">/</span><span class="mf">2.</span><span class="p">}</span>
+
+<span class="n">file2boxes</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">boxes</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="s1">'./data/boxes/'</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+        <span class="n">bxs</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+        <span class="n">blabel</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'[a-zA-Z]*'</span><span class="p">,</span> <span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">bxs</span><span class="p">:</span>
+            <span class="n">it</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s1">'annotations'</span><span class="p">]</span>
+            
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+                <span class="n">i</span><span class="p">[</span><span class="s1">'label'</span><span class="p">]</span> <span class="o">=</span> <span class="n">blabel</span>
+            
+            <span class="n">fname</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">]</span>
+            
+            <span class="k">if</span> <span class="s1">'data'</span> <span class="ow">in</span> <span class="n">fname</span><span class="p">:</span>
+                <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">fname</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">existing</span> <span class="o">=</span> <span class="n">file2boxes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+            
+            <span class="n">item</span><span class="p">[</span><span class="s1">'annotations'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">convert_bb</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">all_sizes</span><span class="p">[</span><span class="n">fname</span><span class="p">])</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="s1">'annotations'</span><span class="p">]]</span>
+            
+            <span class="c1"># Inplace sort so that we can find the largest box.</span>
+            <span class="n">item</span><span class="p">[</span><span class="s1">'annotations'</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="s1">'height'</span><span class="p">])</span>
+            
+            <span class="c1"># Now lets just take the largest (last one)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s1">'annotations'</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">largest</span> <span class="o">=</span> <span class="n">null_largest</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">largest</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s1">'annotations'</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                
+            <span class="n">item</span><span class="p">[</span><span class="s1">'box_loc'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">largest</span><span class="p">[</span><span class="s1">'width'</span><span class="p">],</span> <span class="n">largest</span><span class="p">[</span><span class="s1">'height'</span><span class="p">],</span> <span class="n">largest</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span> <span class="n">largest</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]]</span>
+            
+            <span class="k">if</span> <span class="n">existing</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">file2boxes</span><span class="p">[</span><span class="n">fname</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">file2boxes</span><span class="p">[</span><span class="n">fname</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s1">'annotations'</span><span class="p">])</span>
+                
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Some of the files are unrepresented. Let's make sure they have a null largest.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [29]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_boxes</span><span class="p">(</span><span class="n">gen</span><span class="p">,</span> <span class="n">file2boxes</span><span class="o">=</span><span class="n">file2boxes</span><span class="p">,</span> <span class="n">null_largest</span><span class="o">=</span><span class="n">null_largest</span><span class="p">):</span>
+    <span class="n">boxes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">nlarge</span> <span class="o">=</span>  <span class="p">[</span><span class="n">null_largest</span><span class="p">[</span><span class="s1">'width'</span><span class="p">],</span> <span class="n">null_largest</span><span class="p">[</span><span class="s1">'height'</span><span class="p">],</span> <span class="n">null_largest</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span> <span class="n">null_largest</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">gen</span><span class="o">.</span><span class="n">filenames</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">'</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">meta</span> <span class="o">=</span> <span class="n">file2boxes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">meta</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">boxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nlarge</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">largest</span> <span class="o">=</span> <span class="n">meta</span><span class="p">[</span><span class="s1">'box_loc'</span><span class="p">]</span>
+            <span class="n">boxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">largest</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">boxes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Prepare-the-second-output-labels">Prepare the second output labels<a class="anchor-link" href="#Prepare-the-second-output-labels">Â¶</a></h1><p>Now we have the labels, we need to line them up with the other data labels for train, valid and sample. The generators from each will help us with this.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [30]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_boxes</span> <span class="o">=</span> <span class="n">get_boxes</span><span class="p">(</span><span class="n">train_gen</span><span class="p">)</span>
+<span class="n">valid_boxes</span> <span class="o">=</span> <span class="n">get_boxes</span><span class="p">(</span><span class="n">valid_gen</span><span class="p">)</span>
+<span class="n">sample_boxes</span> <span class="o">=</span> <span class="n">get_boxes</span><span class="p">(</span><span class="n">sample_gen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Let's-use-the-previous-simple-model.">Let's use the previous simple model.<a class="anchor-link" href="#Let's-use-the-previous-simple-model.">Â¶</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [31]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">simple</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">InputLayer</span><span class="p">((</span><span class="mi">256</span><span class="p">,</span><span class="mi">256</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+    <span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">),</span>
+    <span class="n">MaxPooling2D</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">),</span>
+  <span class="p">])</span>
+<span class="n">simple</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_3 (InputLayer)         (None, 256, 256, 3)       0         
+_________________________________________________________________
+conv2d_8 (Conv2D)            (None, 254, 254, 16)      448       
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 63, 63, 16)        0         
+_________________________________________________________________
+conv2d_9 (Conv2D)            (None, 61, 61, 16)        2320      
+=================================================================
+Total params: 2,768.0
+Trainable params: 2,768.0
+Non-trainable params: 0.0
+_________________________________________________________________
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">inp</span>  <span class="o">=</span> <span class="n">Input</span><span class="p">((</span><span class="mi">256</span><span class="p">,</span><span class="mi">256</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">sim</span> <span class="o">=</span> <span class="n">simple</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">Conv2D</span><span class="p">(</span><span class="mi">8</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))(</span><span class="n">sim</span><span class="p">)</span>
+<span class="n">out1</span> <span class="o">=</span> <span class="n">GlobalMaxPool2D</span><span class="p">()(</span><span class="n">c1</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">Conv2D</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))(</span><span class="n">sim</span><span class="p">)</span>
+<span class="n">out2</span> <span class="o">=</span> <span class="n">GlobalMaxPool2D</span><span class="p">()(</span><span class="n">c2</span><span class="p">)</span>
+<span class="n">dualSimple</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">inp</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="n">out1</span><span class="p">,</span> <span class="n">out2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dualSimple</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">'adam'</span><span class="p">,</span>
+              <span class="n">loss</span><span class="o">=</span><span class="p">[</span><span class="s1">'categorical_crossentropy'</span><span class="p">,</span> <span class="s1">'mse'</span><span class="p">],</span>
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">'accuracy'</span><span class="p">],</span>
+             <span class="n">loss_weights</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.01</span><span class="p">])</span>
+
+<span class="n">dualSimple</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dualSimple</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">[:],</span> <span class="p">[</span><span class="n">labels</span><span class="p">[:],</span> <span class="n">train_boxes</span><span class="p">],</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">val_data</span><span class="p">,</span> <span class="p">[</span><span class="n">val_labels</span><span class="p">,</span> <span class="n">valid_boxes</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Train on 3025 samples, validate on 752 samples
+Epoch 1/3
+3025/3025 [==============================] - 20s - loss: 10.5559 - global_max_pooling2d_1_loss: 1.8870 - global_max_pooling2d_2_loss: 866.8852 - global_max_pooling2d_1_acc: 0.3898 - global_max_pooling2d_2_acc: 0.5676 - val_loss: 3.0985 - val_global_max_pooling2d_1_loss: 1.7335 - val_global_max_pooling2d_2_loss: 136.4989 - val_global_max_pooling2d_1_acc: 0.4561 - val_global_max_pooling2d_2_acc: 0.1077
+Epoch 2/3
+3025/3025 [==============================] - 16s - loss: 2.8031 - global_max_pooling2d_1_loss: 1.6750 - global_max_pooling2d_2_loss: 112.8190 - global_max_pooling2d_1_acc: 0.4549 - global_max_pooling2d_2_acc: 0.4175 - val_loss: 2.4116 - val_global_max_pooling2d_1_loss: 1.6376 - val_global_max_pooling2d_2_loss: 77.4025 - val_global_max_pooling2d_1_acc: 0.4561 - val_global_max_pooling2d_2_acc: 0.6237
+Epoch 3/3
+3025/3025 [==============================] - 16s - loss: 2.3125 - global_max_pooling2d_1_loss: 1.6412 - global_max_pooling2d_2_loss: 67.1315 - global_max_pooling2d_1_acc: 0.4549 - global_max_pooling2d_2_acc: 0.5091 - val_loss: 2.2237 - val_global_max_pooling2d_1_loss: 1.6337 - val_global_max_pooling2d_2_loss: 59.0001 - val_global_max_pooling2d_1_acc: 0.4561 - val_global_max_pooling2d_2_acc: 0.5984
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[20]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><keras.callbacks.history at 0x7f25f7ed26a0></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Now-Try-with-pretrained-model-+-convolutions.">Now Try with pretrained model + convolutions.<a class="anchor-link" href="#Now-Try-with-pretrained-model-+-convolutions.">Â¶</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [32]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conv_top</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span><span class="n">InputLayer</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2048</span><span class="p">)),</span>
+                       <span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="s1">'same'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">),</span>
+                       <span class="n">BatchNormalization</span><span class="p">(),</span>
+                       <span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="s1">'same'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">),</span>
+                       <span class="n">BatchNormalization</span><span class="p">(),</span>
+                       <span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="s1">'same'</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">),</span>
+                       <span class="n">BatchNormalization</span><span class="p">(),</span>
+                      <span class="p">])</span>
+
+<span class="n">inp</span> <span class="o">=</span> <span class="n">Input</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2048</span><span class="p">))</span>
+<span class="n">ct</span> <span class="o">=</span> <span class="n">conv_top</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+
+<span class="c1"># ct is the convolution top output.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Conv2D</span><span class="p">(</span><span class="mi">8</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="s1">'same'</span><span class="p">,</span><span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">)(</span><span class="n">ct</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">BatchNormalization</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Conv2D</span><span class="p">(</span><span class="mi">8</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="s1">'same'</span><span class="p">,</span><span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">BatchNormalization</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">GlobalAveragePooling2D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">out1</span> <span class="o">=</span> <span class="n">Activation</span><span class="p">(</span><span class="s1">'softmax'</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">'class'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">Conv2D</span><span class="p">(</span><span class="mi">4</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="s1">'same'</span><span class="p">,</span><span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">)(</span><span class="n">ct</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">BatchNormalization</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Conv2D</span><span class="p">(</span><span class="mi">4</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="s1">'same'</span><span class="p">,</span><span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">BatchNormalization</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">out2</span> <span class="o">=</span> <span class="n">GlobalAveragePooling2D</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'box'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">conv_model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">inp</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="n">out1</span><span class="p">,</span> <span class="n">out2</span><span class="p">])</span>
+<span class="n">conv_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">'adam'</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="p">[</span><span class="s1">'categorical_crossentropy'</span><span class="p">,</span> <span class="s1">'mse'</span><span class="p">],</span> 
+                 <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">'accuracy'</span><span class="p">],</span> <span class="n">loss_weights</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.001</span><span class="p">])</span>
+
+<span class="n">conv_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>____________________________________________________________________________________________________
+Layer (type)                     Output Shape          Param #     Connected to                     
+====================================================================================================
+input_5 (InputLayer)             (None, 8, 8, 2048)    0                                            
+____________________________________________________________________________________________________
+sequential_3 (Sequential)        (None, 8, 8, 32)      608736                                       
+____________________________________________________________________________________________________
+conv2d_13 (Conv2D)               (None, 8, 8, 8)       2312                                         
+____________________________________________________________________________________________________
+batch_normalization_11 (BatchNor (None, 8, 8, 8)       32                                           
+____________________________________________________________________________________________________
+conv2d_15 (Conv2D)               (None, 8, 8, 4)       1156                                         
+____________________________________________________________________________________________________
+conv2d_14 (Conv2D)               (None, 8, 8, 8)       584                                          
+____________________________________________________________________________________________________
+batch_normalization_13 (BatchNor (None, 8, 8, 4)       16                                           
+____________________________________________________________________________________________________
+batch_normalization_12 (BatchNor (None, 8, 8, 8)       32                                           
+____________________________________________________________________________________________________
+conv2d_16 (Conv2D)               (None, 8, 8, 4)       148                                          
+____________________________________________________________________________________________________
+global_average_pooling2d_2 (Glob (None, 8)             0                                            
+____________________________________________________________________________________________________
+batch_normalization_14 (BatchNor (None, 8, 8, 4)       16                                           
+____________________________________________________________________________________________________
+class (Activation)               (None, 8)             0                                            
+____________________________________________________________________________________________________
+box (GlobalAveragePooling2D)     (None, 4)             0                                            
+====================================================================================================
+Total params: 613,032.0
+Trainable params: 612,792.0
+Non-trainable params: 240.0
+____________________________________________________________________________________________________
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [33]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xCdata</span> <span class="o">=</span> <span class="n">bcolz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="s1">'bdat'</span><span class="p">,</span><span class="s1">'pretrained'</span><span class="p">,</span><span class="s1">'data'</span><span class="p">))</span>
+<span class="n">xValdata</span> <span class="o">=</span> <span class="n">bcolz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="s1">'bdat'</span><span class="p">,</span><span class="s1">'pretrained'</span><span class="p">,</span><span class="s1">'valdata'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [42]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conv_model</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">lr</span> <span class="o">=</span> <span class="mf">1e-1</span>
+
+<span class="n">conv_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xCdata</span><span class="p">,</span> <span class="p">[</span><span class="n">labels</span><span class="p">,</span> <span class="n">train_boxes</span><span class="p">],</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">xValdata</span><span class="p">,</span> <span class="p">[</span><span class="n">val_labels</span><span class="p">,</span> <span class="n">valid_boxes</span><span class="p">]),</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Train on 3025 samples, validate on 752 samples
+Epoch 1/50
+10s - loss: 7.4551 - class_loss: 1.5769 - box_loss: 5878.2130 - class_acc: 0.6635 - box_acc: 0.2694 - val_loss: 7.8971 - val_class_loss: 2.1183 - val_box_loss: 5778.8451 - val_class_acc: 0.2168 - val_box_acc: 0.2301
+Epoch 2/50
+10s - loss: 7.4516 - class_loss: 1.5734 - box_loss: 5878.2536 - class_acc: 0.6641 - box_acc: 0.2704 - val_loss: 7.8868 - val_class_loss: 2.1061 - val_box_loss: 5780.6274 - val_class_acc: 0.2261 - val_box_acc: 0.2261
+Epoch 3/50
+10s - loss: 7.4502 - class_loss: 1.5720 - box_loss: 5878.2218 - class_acc: 0.6671 - box_acc: 0.2701 - val_loss: 7.8781 - val_class_loss: 2.0975 - val_box_loss: 5780.6206 - val_class_acc: 0.2354 - val_box_acc: 0.2314
+Epoch 4/50
+11s - loss: 7.4472 - class_loss: 1.5691 - box_loss: 5878.1109 - class_acc: 0.6688 - box_acc: 0.2737 - val_loss: 7.8912 - val_class_loss: 2.1106 - val_box_loss: 5780.5943 - val_class_acc: 0.2154 - val_box_acc: 0.2380
+Epoch 5/50
+10s - loss: 7.4444 - class_loss: 1.5663 - box_loss: 5878.0921 - class_acc: 0.6707 - box_acc: 0.2707 - val_loss: 7.8887 - val_class_loss: 2.1096 - val_box_loss: 5779.1064 - val_class_acc: 0.2247 - val_box_acc: 0.2287
+Epoch 6/50
+10s - loss: 7.4427 - class_loss: 1.5647 - box_loss: 5877.9837 - class_acc: 0.6740 - box_acc: 0.2760 - val_loss: 7.8926 - val_class_loss: 2.1120 - val_box_loss: 5780.6735 - val_class_acc: 0.2181 - val_box_acc: 0.2367
+Epoch 7/50
+10s - loss: 7.4380 - class_loss: 1.5601 - box_loss: 5877.9881 - class_acc: 0.6731 - box_acc: 0.2661 - val_loss: 7.8910 - val_class_loss: 2.1102 - val_box_loss: 5780.8347 - val_class_acc: 0.2207 - val_box_acc: 0.2340
+Epoch 8/50
+10s - loss: 7.4382 - class_loss: 1.5603 - box_loss: 5877.9042 - class_acc: 0.6750 - box_acc: 0.2701 - val_loss: 7.8948 - val_class_loss: 2.1150 - val_box_loss: 5779.7767 - val_class_acc: 0.2247 - val_box_acc: 0.2314
+Epoch 9/50
+11s - loss: 7.4306 - class_loss: 1.5528 - box_loss: 5877.8457 - class_acc: 0.6737 - box_acc: 0.2731 - val_loss: 7.8943 - val_class_loss: 2.1145 - val_box_loss: 5779.7899 - val_class_acc: 0.2247 - val_box_acc: 0.2394
+Epoch 10/50
+12s - loss: 7.4321 - class_loss: 1.5543 - box_loss: 5877.7882 - class_acc: 0.6760 - box_acc: 0.2724 - val_loss: 7.8886 - val_class_loss: 2.1077 - val_box_loss: 5780.9016 - val_class_acc: 0.2234 - val_box_acc: 0.2274
+Epoch 11/50
+11s - loss: 7.4295 - class_loss: 1.5517 - box_loss: 5877.7257 - class_acc: 0.6803 - box_acc: 0.2678 - val_loss: 7.9017 - val_class_loss: 2.1240 - val_box_loss: 5777.7094 - val_class_acc: 0.2261 - val_box_acc: 0.2274
+Epoch 12/50
+12s - loss: 7.4267 - class_loss: 1.5489 - box_loss: 5877.7502 - class_acc: 0.6754 - box_acc: 0.2671 - val_loss: 7.8666 - val_class_loss: 2.0834 - val_box_loss: 5783.1535 - val_class_acc: 0.2447 - val_box_acc: 0.2274
+Epoch 13/50
+10s - loss: 7.4266 - class_loss: 1.5490 - box_loss: 5877.6248 - class_acc: 0.6777 - box_acc: 0.2731 - val_loss: 7.8920 - val_class_loss: 2.1125 - val_box_loss: 5779.4986 - val_class_acc: 0.2301 - val_box_acc: 0.2327
+Epoch 14/50
+10s - loss: 7.4237 - class_loss: 1.5461 - box_loss: 5877.6094 - class_acc: 0.6790 - box_acc: 0.2747 - val_loss: 7.8777 - val_class_loss: 2.0969 - val_box_loss: 5780.7517 - val_class_acc: 0.2407 - val_box_acc: 0.2274
+Epoch 15/50
+10s - loss: 7.4186 - class_loss: 1.5410 - box_loss: 5877.5319 - class_acc: 0.6840 - box_acc: 0.2727 - val_loss: 7.8908 - val_class_loss: 2.1110 - val_box_loss: 5779.8223 - val_class_acc: 0.2354 - val_box_acc: 0.2354
+Epoch 16/50
+10s - loss: 7.4162 - class_loss: 1.5387 - box_loss: 5877.4903 - class_acc: 0.6836 - box_acc: 0.2704 - val_loss: 7.8849 - val_class_loss: 2.1032 - val_box_loss: 5781.7840 - val_class_acc: 0.2367 - val_box_acc: 0.2407
+Epoch 17/50
+10s - loss: 7.4122 - class_loss: 1.5347 - box_loss: 5877.5028 - class_acc: 0.6945 - box_acc: 0.2701 - val_loss: 7.9116 - val_class_loss: 2.1349 - val_box_loss: 5776.7147 - val_class_acc: 0.2141 - val_box_acc: 0.2340
+Epoch 18/50
+10s - loss: 7.4094 - class_loss: 1.5320 - box_loss: 5877.3756 - class_acc: 0.6869 - box_acc: 0.2707 - val_loss: 7.8986 - val_class_loss: 2.1196 - val_box_loss: 5778.9709 - val_class_acc: 0.2207 - val_box_acc: 0.2434
+Epoch 19/50
+12s - loss: 7.4095 - class_loss: 1.5321 - box_loss: 5877.3517 - class_acc: 0.6866 - box_acc: 0.2711 - val_loss: 7.8871 - val_class_loss: 2.1068 - val_box_loss: 5780.3197 - val_class_acc: 0.2340 - val_box_acc: 0.2340
+Epoch 20/50
+12s - loss: 7.4051 - class_loss: 1.5278 - box_loss: 5877.2850 - class_acc: 0.6962 - box_acc: 0.2684 - val_loss: 7.8825 - val_class_loss: 2.1024 - val_box_loss: 5780.0639 - val_class_acc: 0.2407 - val_box_acc: 0.2314
+Epoch 21/50
+12s - loss: 7.4077 - class_loss: 1.5304 - box_loss: 5877.2550 - class_acc: 0.6949 - box_acc: 0.2678 - val_loss: 7.8906 - val_class_loss: 2.1103 - val_box_loss: 5780.3194 - val_class_acc: 0.2301 - val_box_acc: 0.2287
+Epoch 22/50
+11s - loss: 7.4054 - class_loss: 1.5282 - box_loss: 5877.1532 - class_acc: 0.6916 - box_acc: 0.2704 - val_loss: 7.9023 - val_class_loss: 2.1232 - val_box_loss: 5779.0454 - val_class_acc: 0.2194 - val_box_acc: 0.2367
+Epoch 23/50
+11s - loss: 7.3986 - class_loss: 1.5214 - box_loss: 5877.1802 - class_acc: 0.6995 - box_acc: 0.2691 - val_loss: 7.8941 - val_class_loss: 2.1147 - val_box_loss: 5779.3671 - val_class_acc: 0.2301 - val_box_acc: 0.2327
+Epoch 24/50
+10s - loss: 7.3976 - class_loss: 1.5205 - box_loss: 5877.1672 - class_acc: 0.6942 - box_acc: 0.2688 - val_loss: 7.9036 - val_class_loss: 2.1258 - val_box_loss: 5777.8122 - val_class_acc: 0.2301 - val_box_acc: 0.2340
+Epoch 25/50
+11s - loss: 7.3936 - class_loss: 1.5165 - box_loss: 5877.0203 - class_acc: 0.7002 - box_acc: 0.2701 - val_loss: 7.9263 - val_class_loss: 2.1496 - val_box_loss: 5776.7462 - val_class_acc: 0.2048 - val_box_acc: 0.2434
+Epoch 26/50
+11s - loss: 7.3931 - class_loss: 1.5161 - box_loss: 5877.0190 - class_acc: 0.6912 - box_acc: 0.2704 - val_loss: 7.9089 - val_class_loss: 2.1305 - val_box_loss: 5778.3832 - val_class_acc: 0.2207 - val_box_acc: 0.2380
+Epoch 27/50
+11s - loss: 7.3873 - class_loss: 1.5104 - box_loss: 5876.9228 - class_acc: 0.7018 - box_acc: 0.2698 - val_loss: 7.9006 - val_class_loss: 2.1219 - val_box_loss: 5778.7269 - val_class_acc: 0.2274 - val_box_acc: 0.2447
+Epoch 28/50
+11s - loss: 7.3868 - class_loss: 1.5099 - box_loss: 5876.8570 - class_acc: 0.7008 - box_acc: 0.2681 - val_loss: 7.9297 - val_class_loss: 2.1546 - val_box_loss: 5775.1525 - val_class_acc: 0.2035 - val_box_acc: 0.2487
+Epoch 29/50
+11s - loss: 7.3823 - class_loss: 1.5054 - box_loss: 5876.8710 - class_acc: 0.7078 - box_acc: 0.2747 - val_loss: 7.9123 - val_class_loss: 2.1349 - val_box_loss: 5777.3507 - val_class_acc: 0.2154 - val_box_acc: 0.2420
+Epoch 30/50
+12s - loss: 7.3833 - class_loss: 1.5065 - box_loss: 5876.7657 - class_acc: 0.7041 - box_acc: 0.2744 - val_loss: 7.9080 - val_class_loss: 2.1296 - val_box_loss: 5778.3712 - val_class_acc: 0.2168 - val_box_acc: 0.2473
+Epoch 31/50
+11s - loss: 7.3783 - class_loss: 1.5016 - box_loss: 5876.7030 - class_acc: 0.7111 - box_acc: 0.2747 - val_loss: 7.9049 - val_class_loss: 2.1258 - val_box_loss: 5779.0690 - val_class_acc: 0.2247 - val_box_acc: 0.2540
+Epoch 32/50
+12s - loss: 7.3760 - class_loss: 1.4993 - box_loss: 5876.7084 - class_acc: 0.7061 - box_acc: 0.2674 - val_loss: 7.9134 - val_class_loss: 2.1354 - val_box_loss: 5777.9656 - val_class_acc: 0.2168 - val_box_acc: 0.2407
+Epoch 33/50
+11s - loss: 7.3730 - class_loss: 1.4964 - box_loss: 5876.6351 - class_acc: 0.7117 - box_acc: 0.2714 - val_loss: 7.9110 - val_class_loss: 2.1326 - val_box_loss: 5778.3908 - val_class_acc: 0.2181 - val_box_acc: 0.2460
+Epoch 34/50
+11s - loss: 7.3686 - class_loss: 1.4920 - box_loss: 5876.5847 - class_acc: 0.7078 - box_acc: 0.2737 - val_loss: 7.9046 - val_class_loss: 2.1251 - val_box_loss: 5779.5100 - val_class_acc: 0.2234 - val_box_acc: 0.2327
+Epoch 35/50
+11s - loss: 7.3685 - class_loss: 1.4920 - box_loss: 5876.5400 - class_acc: 0.7124 - box_acc: 0.2704 - val_loss: 7.8963 - val_class_loss: 2.1174 - val_box_loss: 5778.9520 - val_class_acc: 0.2314 - val_box_acc: 0.2340
+Epoch 36/50
+10s - loss: 7.3675 - class_loss: 1.4909 - box_loss: 5876.5216 - class_acc: 0.7071 - box_acc: 0.2734 - val_loss: 7.9050 - val_class_loss: 2.1257 - val_box_loss: 5779.3316 - val_class_acc: 0.2234 - val_box_acc: 0.2500
+Epoch 37/50
+10s - loss: 7.3629 - class_loss: 1.4865 - box_loss: 5876.3815 - class_acc: 0.7147 - box_acc: 0.2714 - val_loss: 7.8849 - val_class_loss: 2.1042 - val_box_loss: 5780.7195 - val_class_acc: 0.2407 - val_box_acc: 0.2434
+Epoch 38/50
+10s - loss: 7.3638 - class_loss: 1.4875 - box_loss: 5876.3696 - class_acc: 0.7150 - box_acc: 0.2717 - val_loss: 7.9133 - val_class_loss: 2.1373 - val_box_loss: 5775.9858 - val_class_acc: 0.2181 - val_box_acc: 0.2434
+Epoch 39/50
+10s - loss: 7.3599 - class_loss: 1.4836 - box_loss: 5876.3230 - class_acc: 0.7147 - box_acc: 0.2721 - val_loss: 7.8962 - val_class_loss: 2.1157 - val_box_loss: 5780.4590 - val_class_acc: 0.2420 - val_box_acc: 0.2434
+Epoch 40/50
+10s - loss: 7.3540 - class_loss: 1.4777 - box_loss: 5876.2577 - class_acc: 0.7220 - box_acc: 0.2711 - val_loss: 7.9238 - val_class_loss: 2.1471 - val_box_loss: 5776.6997 - val_class_acc: 0.2048 - val_box_acc: 0.2487
+Epoch 41/50
+10s - loss: 7.3534 - class_loss: 1.4772 - box_loss: 5876.1935 - class_acc: 0.7167 - box_acc: 0.2770 - val_loss: 7.8969 - val_class_loss: 2.1168 - val_box_loss: 5780.1268 - val_class_acc: 0.2247 - val_box_acc: 0.2434
+Epoch 42/50
+10s - loss: 7.3514 - class_loss: 1.4752 - box_loss: 5876.1586 - class_acc: 0.7134 - box_acc: 0.2737 - val_loss: 7.9024 - val_class_loss: 2.1225 - val_box_loss: 5779.8915 - val_class_acc: 0.2367 - val_box_acc: 0.2487
+Epoch 43/50
+10s - loss: 7.3498 - class_loss: 1.4738 - box_loss: 5876.0624 - class_acc: 0.7180 - box_acc: 0.2714 - val_loss: 7.9148 - val_class_loss: 2.1380 - val_box_loss: 5776.8075 - val_class_acc: 0.2274 - val_box_acc: 0.2553
+Epoch 44/50
+10s - loss: 7.3466 - class_loss: 1.4706 - box_loss: 5876.0543 - class_acc: 0.7286 - box_acc: 0.2767 - val_loss: 7.9060 - val_class_loss: 2.1277 - val_box_loss: 5778.2598 - val_class_acc: 0.2301 - val_box_acc: 0.2500
+Epoch 45/50
+11s - loss: 7.3456 - class_loss: 1.4696 - box_loss: 5876.0799 - class_acc: 0.7217 - box_acc: 0.2727 - val_loss: 7.8981 - val_class_loss: 2.1204 - val_box_loss: 5777.7342 - val_class_acc: 0.2394 - val_box_acc: 0.2420
+Epoch 46/50
+11s - loss: 7.3451 - class_loss: 1.4691 - box_loss: 5875.9383 - class_acc: 0.7217 - box_acc: 0.2734 - val_loss: 7.9001 - val_class_loss: 2.1212 - val_box_loss: 5778.8415 - val_class_acc: 0.2447 - val_box_acc: 0.2380
+Epoch 47/50
+10s - loss: 7.3370 - class_loss: 1.4611 - box_loss: 5875.8369 - class_acc: 0.7345 - box_acc: 0.2764 - val_loss: 7.8968 - val_class_loss: 2.1181 - val_box_loss: 5778.7160 - val_class_acc: 0.2447 - val_box_acc: 0.2434
+Epoch 48/50
+10s - loss: 7.3378 - class_loss: 1.4620 - box_loss: 5875.7889 - class_acc: 0.7336 - box_acc: 0.2707 - val_loss: 7.9004 - val_class_loss: 2.1219 - val_box_loss: 5778.5202 - val_class_acc: 0.2394 - val_box_acc: 0.2354
+Epoch 49/50
+12s - loss: 7.3326 - class_loss: 1.4568 - box_loss: 5875.7225 - class_acc: 0.7352 - box_acc: 0.2737 - val_loss: 7.8972 - val_class_loss: 2.1180 - val_box_loss: 5779.1113 - val_class_acc: 0.2487 - val_box_acc: 0.2434
+Epoch 50/50
+9s - loss: 7.3320 - class_loss: 1.4562 - box_loss: 5875.7083 - class_acc: 0.7349 - box_acc: 0.2707 - val_loss: 7.8993 - val_class_loss: 2.1213 - val_box_loss: 5778.0266 - val_class_acc: 0.2447 - val_box_acc: 0.2394
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[42]:</div>
+<div class="output_text output_subarea output_execute_result">
+<pre><keras.callbacks.history at 0x2107e4da3c8></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wow, 91% accuracy by just adding extra, related information.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+            </section>
+        </div>
+    </article>
+                </div>
+            </div>
+        </main>
+            <div class="eevee-pagination__container eevee-container mdl-grid">
+                <div role="presentation"
+                     class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+<nav class="eevee-pagination mdl-cell mdl-cell--12-col" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Pagination">
+    <div class="eevee-spacer"></div>
+</nav>                </div>
+            </div>
+        <footer class="mdl-mega-footer" itemscope
+                itemtype="http://schema.org/SiteNavigationElement">
+            <div class="mdl-mega-footer--top-section">
+                <div class="mdl-mega-footer--drop-down-section">
+                    <ul class="mdl-mega-footer--link-list">
+                        <li>
+                            <a href="#top" itemprop="url"
+                               title="Back to the top of the page">
+                                Back to the top of the page
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+<div class="mdl-mega-footer--middle-section" itemscope
+     itemtype="http://schema.org/SiteNavigationElement"
+     aria-label="Footer navigation">
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Categories</h1>
+        <ul class="mdl-mega-footer--link-list">
+                <li>
+                    <a href="http://notes.johnvial.info/category/adtech.html" itemprop="url"
+                       rel="bookmark">
+                        adtech
+                    </a>
+                </li>
+                <li>
+                    <a href="http://notes.johnvial.info/category/business.html" itemprop="url"
+                       rel="bookmark">
+                        business
+                    </a>
+                </li>
+                <li>
+                    <a href="http://notes.johnvial.info/category/development.html" itemprop="url"
+                       rel="bookmark">
+                        development
+                    </a>
+                </li>
+                <li>
+                    <a href="http://notes.johnvial.info/category/mining.html" itemprop="url"
+                       rel="bookmark">
+                        mining
+                    </a>
+                </li>
+                <li>
+                    <a href="http://notes.johnvial.info/category/notebooks.html" itemprop="url"
+                       rel="bookmark">
+                        notebooks
+                    </a>
+                </li>
+                <li>
+                    <a href="http://notes.johnvial.info/category/programming.html" itemprop="url"
+                       rel="bookmark">
+                        programming
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Social</h1>
+        <ul class="mdl-mega-footer--link-list">
+                <li>
+                    <a href="http://github.com/johnny555" itemprop="url" rel="bookmark">
+                        github
+                    </a>
+                </li>
+                <li>
+                    <a href="http://au.linkedin.com/in/johnvial" itemprop="url" rel="bookmark">
+                        linkedin
+                    </a>
+                </li>
+                <li>
+                    <a href="http://twitter.com/JohnVial" itemprop="url" rel="bookmark">
+                        twitter
+                    </a>
+                </li>
+                <li>
+                    <a href="http://scholar.google.com.au/citations?user=Tn8_5HQAAAAJ&hl=en" itemprop="url" rel="bookmark">
+                        scholar
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="mdl-mega-footer--drop-down-section">
+        <h1 class="mdl-mega-footer--heading">Links</h1>
+        <ul class="mdl-mega-footer--link-list">
+                <li>
+                    <a href="http://upright.media/" itemprop="url" rel="bookmark">
+                        Upright Media
+                    </a>
+                </li>
+                <li>
+                    <a href="http://fast.ai/" itemprop="url" rel="bookmark">
+                        Fast.ai
+                    </a>
+                </li>
+                <li>
+                    <a href="http://pmlg.org" itemprop="url" rel="bookmark">
+                        Perth ML Group
+                    </a>
+                </li>
+        </ul>
+    </div>
+</div>            <div class="mdl-mega-footer--bottom-section">
+                <div class="mdl-logo">
+                    <a href="http://notes.johnvial.info" rel="bookmark" itemprop="url"
+                       title="John's Notes">
+                        John's Notes
+                    </a>
+                </div>
+                    <ul class="eevee-footer mdl-mega-footer--link-list">
+                            <li>Powered by love &amp; rainbow sparkles.</li>
+                            <li><a href="https://kura.io/eevee/" title="Eevee">Eevee</a> theme by <a href="https://kura.io/" title="kura.io">kura.io</a></li>
+                    </ul>
+            </div>
+        </footer>
+    </div>
+    <link rel="stylesheet"
+          href="//code.getmdl.io/1.1.3/material.blue-pink.min.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/material-icons.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/pygments.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/eevee.css">
+        <link rel="stylesheet" type="text/css"
+              href="http://notes.johnvial.info/theme/css/custom.css">
+        <script async src="http://notes.johnvial.info/theme/js/material.js">
+        </script>
+    <script>
+        var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-6167189-1"]),_gaq.push(["_trackPageview"]),function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();
+    </script>
+</body>
+</html>
