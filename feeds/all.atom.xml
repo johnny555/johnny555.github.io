@@ -113,7 +113,7 @@ and then calmly walks out as he chews on his prize.&lt;/p&gt;
 coffee cup and puts it in the nearby bin. She then walks back out to
 continue her journey.&lt;/p&gt;
 &lt;p&gt;During all of this a teenager explains to his younger brother the intricacies
-of playing the Pokemon card game.&lt;/p&gt;</content></entry><entry><title>Fisheries Competition - Adding Bounding Box's</title><link href="http://notes.johnvial.info/fisheries-part2.html" rel="alternate"></link><published>2017-06-12T00:00:00+08:00</published><updated>2017-06-12T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-06-12:/fisheries-part2.html</id><summary type="html"></summary><content type="html">&lt;style type="text/css"&gt;/*!
+of playing the Pokemon card game.&lt;/p&gt;</content></entry><entry><title>Fisheries Competition - Adding Bounding Box's</title><link href="http://notes.johnvial.info/fisheries-part2.html" rel="alternate"></link><published>2017-06-12T00:00:00+08:00</published><updated>2017-06-12T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-06-12:/fisheries-part2.html</id><summary type="html">&lt;p&gt;As part of the homework for lesson 7 of the fast.ai course, let's use the bounding box information to achieve a better score on the fisheries competition.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -2997,7 +2997,7 @@ consolidate!&lt;/p&gt;
 virtue's of MATLAB to her friend.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;It's just like a really big calculator.&lt;/p&gt;
-&lt;/blockquote&gt;</content></entry><entry><title>Fisheries Competition Part 1</title><link href="http://notes.johnvial.info/fisheries-part1.html" rel="alternate"></link><published>2017-06-11T00:00:00+08:00</published><updated>2017-06-11T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-06-11:/fisheries-part1.html</id><summary type="html"></summary><content type="html">&lt;style type="text/css"&gt;/*!
+&lt;/blockquote&gt;</content></entry><entry><title>Fisheries Competition Part 1</title><link href="http://notes.johnvial.info/fisheries-part1.html" rel="alternate"></link><published>2017-06-11T00:00:00+08:00</published><updated>2017-06-11T00:00:00+08:00</updated><author><name>John Vial</name></author><id>tag:notes.johnvial.info,2017-06-11:/fisheries-part1.html</id><summary type="html">&lt;p&gt;A notebook as part of the homework for lesson 7 of the Fast.ai course. Here we attempt to solve the Kaggle Fisheries competition.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
